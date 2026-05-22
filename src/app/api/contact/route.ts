@@ -102,8 +102,16 @@ export async function POST(request: Request) {
 
     if (error) {
       console.error("Resend send failed:", error);
+      // In development, surface the real reason so the developer can debug.
+      // In production, keep the user-facing message generic.
+      const detail =
+        process.env.NODE_ENV !== "production"
+          ? ` (${error.name ?? "ResendError"}: ${error.message ?? "unknown"})`
+          : "";
       return NextResponse.json(
-        { error: "Could not send the message. Try again or email directly." },
+        {
+          error: `Could not send the message.${detail} Try again or email directly.`,
+        },
         { status: 502 },
       );
     }
