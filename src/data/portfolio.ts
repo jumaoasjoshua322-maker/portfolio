@@ -38,8 +38,8 @@ export type Project = {
     chromeLabel: string;
     /** Hero shot — shown full-width at the top of the mockup card. */
     hero: ProjectScreenshot;
-    /** Two supporting shots, rendered side-by-side beneath the hero. */
-    supporting: [ProjectScreenshot, ProjectScreenshot];
+    /** Supporting shots, rendered in a responsive grid below the hero. */
+    supporting: ProjectScreenshot[];
   };
 };
 
@@ -185,6 +185,35 @@ export const projects: Project[] = [
     demoUrl:
       "mailto:jumaoas.joshuaa@gmail.com?subject=Camilo's%20Catering%20SaaS%20demo%20request",
     accent: "teal",
+    screenshots: {
+      chromeLabel: "camilos-catering.local",
+      hero: {
+        src: "/projects/camilos-catering/hero.png",
+        alt: "Camilo's Catering homepage — hero with 'Premium Catering for Every Occasion', a wedding photo background, View packages and Get a quote CTAs, and a dark stats strip below.",
+        width: 1920,
+        height: 888,
+      },
+      supporting: [
+        {
+          src: "/projects/camilos-catering/packages.png",
+          alt: "Our packages screen showing filterable catering packages — Classic Wedding, Corporate Gala, and Premium Wedding cards with prices.",
+          width: 1920,
+          height: 888,
+        },
+        {
+          src: "/projects/camilos-catering/about.png",
+          alt: "About Camilo's Catering page with the founding story and a wedding venue image.",
+          width: 1920,
+          height: 888,
+        },
+        {
+          src: "/projects/camilos-catering/contact.png",
+          alt: "Contact page with phone, email, address, business hours, and a Send Us a Message form.",
+          width: 1920,
+          height: 888,
+        },
+      ],
+    },
   },
   {
     id: "ariat-na-tourist-guide",

@@ -214,6 +214,12 @@ function ProjectMockup({ project }: { project: Project }) {
 
 function ProjectScreenshots({ project }: { project: Project }) {
   const { hero, supporting, chromeLabel } = project.screenshots!;
+  const supportingGrid =
+    supporting.length === 3
+      ? "sm:grid-cols-3"
+      : supporting.length === 1
+      ? "sm:grid-cols-1"
+      : "sm:grid-cols-2";
 
   return (
     <div className="relative min-h-[420px] overflow-hidden rounded-xl border border-white/12 bg-[#090c11] p-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] sm:p-4">
@@ -234,7 +240,7 @@ function ProjectScreenshots({ project }: { project: Project }) {
         </div>
       </BrowserFrame>
 
-      <div className="relative mt-4 grid gap-3 sm:grid-cols-2">
+      <div className={cn("relative mt-4 grid gap-3", supportingGrid)}>
         {supporting.map((shot) => (
           <div
             key={shot.src}
@@ -248,7 +254,7 @@ function ProjectScreenshots({ project }: { project: Project }) {
                 src={shot.src}
                 alt={shot.alt}
                 fill
-                sizes="(min-width: 640px) 25vw, 50vw"
+                sizes="(min-width: 1024px) 17vw, (min-width: 640px) 33vw, 100vw"
                 className="object-cover object-top"
               />
             </div>
