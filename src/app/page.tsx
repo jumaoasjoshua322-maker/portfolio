@@ -1,5 +1,6 @@
 import { PortfolioPage } from "@/components/portfolio-page";
 import { profile, projects, skills } from "@/data/portfolio";
+import { siteUrl } from "@/lib/site";
 
 export default function Home() {
   const jsonLd = {
@@ -13,7 +14,7 @@ export default function Home() {
       addressCountry: "PH",
     },
     email: profile.email,
-    url: "https://joshuajumaoas.dev",
+    url: siteUrl,
     sameAs: [profile.github, profile.linkedin],
     knowsAbout: skills.map((skill) => skill.name),
     hasCredential: {

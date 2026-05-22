@@ -18,12 +18,17 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export function AboutSection() {
   return (
-    <section id="about" className="section-shell" aria-labelledby="about-heading">
+    <section
+      id="about"
+      className="section-shell scroll-mt-20"
+      aria-labelledby="about-heading"
+    >
       <Reveal>
         <SectionHeading
-          eyebrow="About Joshua"
+          headingId="about-heading"
+          eyebrow="About"
           title="A Cebu-based builder with an engineering brain and product taste."
-          description="Joshua's portfolio story is strongest when it is framed around practical systems: responsive interfaces, database-backed workflows, debugging discipline, and the ability to learn fast with modern tools."
+          description="My portfolio story is strongest when framed around practical systems: responsive interfaces, database-backed workflows, debugging discipline, and the ability to learn fast with modern tools."
           icon={<BrainCircuit className="h-3.5 w-3.5" />}
         />
       </Reveal>
@@ -36,18 +41,18 @@ export function AboutSection() {
             </CardHeader>
             <CardContent className="space-y-4 text-sm leading-7 text-zinc-300 sm:text-base">
               <p>
-                Joshua Jumao-as is a Computer Engineering student from Cebu,
-                Philippines, focused on becoming a software engineer who can
-                connect technical implementation with thoughtful user experience.
+                I&apos;m a Computer Engineering student from Cebu, Philippines,
+                focused on becoming a software engineer who can connect technical
+                implementation with thoughtful user experience.
               </p>
               <p>
-                His strongest direction is practical product building: web-based
+                My strongest direction is practical product building: web-based
                 systems that move beyond static pages into authentication,
                 dashboards, route workflows, database integration, testing, and
                 responsive interfaces that feel usable on real devices.
               </p>
               <p>
-                He works with a continuous-learning mindset, using AI-assisted
+                I work with a continuous-learning mindset, using AI-assisted
                 development tools to accelerate exploration while still relying on
                 debugging, analytical thinking, and organized implementation to
                 make the final system reliable.
@@ -71,7 +76,7 @@ export function AboutSection() {
                   <p className="mt-1 text-sm leading-6 text-zinc-400">
                     {resumeHighlights.education[1]}
                   </p>
-                  <p className="mt-2 inline-flex items-center gap-2 rounded-md border border-white/10 bg-white/[0.045] px-2.5 py-1 text-xs text-zinc-300">
+                  <p className="mt-2 inline-flex items-center gap-2 rounded-md border border-white/10 bg-white/4.5 px-2.5 py-1 text-xs text-zinc-300">
                     <MapPin className="h-3.5 w-3.5 text-emerald-200" />
                     {profile.location}
                   </p>
@@ -88,13 +93,13 @@ export function AboutSection() {
               {aboutTimeline.map((item, index) => (
                 <div
                   key={item.title}
-                  className="relative grid gap-4 rounded-lg border border-white/10 bg-white/[0.04] p-4 backdrop-blur-xl sm:grid-cols-[40px_1fr]"
+                  className="relative grid gap-4 rounded-lg border border-white/10 bg-white/4 p-4 backdrop-blur-xl sm:grid-cols-[40px_1fr]"
                 >
-                  <div className="grid h-10 w-10 place-items-center rounded-lg border border-white/[0.12] bg-[#10141b] text-sm font-semibold text-cyan-100">
+                  <div className="grid h-10 w-10 place-items-center rounded-lg border border-white/12 bg-[#10141b] text-sm font-semibold text-cyan-100">
                     {index + 1}
                   </div>
                   <div>
-                    <p className="text-xs font-medium uppercase text-emerald-200/[0.85]">
+                    <p className="text-xs font-medium uppercase text-emerald-200/85">
                       {item.year}
                     </p>
                     <h3 className="mt-1 text-lg font-semibold text-white">
@@ -116,7 +121,7 @@ export function AboutSection() {
                 return (
                   <div
                     key={achievement}
-                    className="rounded-lg border border-white/10 bg-white/[0.045] p-4"
+                    className="rounded-lg border border-white/10 bg-white/4.5 p-4"
                   >
                     <Icon className="mb-4 h-5 w-5 text-amber-200" />
                     <p className="text-sm leading-6 text-zinc-300">

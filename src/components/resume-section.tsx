@@ -20,9 +20,14 @@ export function ResumeSection() {
   }, {});
 
   return (
-    <section id="resume" className="section-shell" aria-labelledby="resume-heading">
+    <section
+      id="resume"
+      className="section-shell scroll-mt-20"
+      aria-labelledby="resume-heading"
+    >
       <Reveal>
         <SectionHeading
+          headingId="resume-heading"
           eyebrow="Resume"
           title="ATS-friendly story, polished for human readers."
           description="The resume section mirrors the portfolio: concise professional summary, education, skill groups, standout projects, and a placeholder area for future certifications."
@@ -33,7 +38,7 @@ export function ResumeSection() {
 
       <div className="grid gap-6 lg:grid-cols-[0.8fr_1.2fr]">
         <Reveal>
-          <aside className="sticky top-24 rounded-lg border border-white/10 bg-white/[0.045] p-5">
+          <aside className="sticky top-24 rounded-lg border border-white/10 bg-white/4.5 p-5">
             <div className="grid h-12 w-12 place-items-center rounded-lg border border-cyan-300/20 bg-cyan-300/10 text-cyan-100">
               <FileText className="h-6 w-6" />
             </div>
@@ -67,14 +72,38 @@ export function ResumeSection() {
         </Reveal>
 
         <Reveal delay={0.08}>
-          <article className="rounded-lg border border-white/[0.12] bg-[#f8fafc] p-5 text-slate-950 shadow-[0_24px_100px_rgba(0,0,0,0.32)] sm:p-8">
+          <article className="rounded-lg border border-white/12 bg-[#f8fafc] p-5 text-slate-950 shadow-[0_24px_100px_rgba(0,0,0,0.32)] sm:p-8">
             <header className="border-b border-slate-200 pb-5">
               <p className="text-sm font-medium uppercase text-slate-500">
                 {profile.role}
               </p>
               <h3 className="mt-2 text-3xl font-semibold">{profile.name}</h3>
               <p className="mt-2 text-sm leading-6 text-slate-600">
-                {profile.location} | {profile.email} | GitHub | LinkedIn
+                {profile.location} |{" "}
+                <a
+                  className="underline decoration-slate-400 underline-offset-2 hover:text-slate-900"
+                  href={`mailto:${profile.email}`}
+                >
+                  {profile.email}
+                </a>{" "}
+                |{" "}
+                <a
+                  className="underline decoration-slate-400 underline-offset-2 hover:text-slate-900"
+                  href={profile.github}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  GitHub
+                </a>{" "}
+                |{" "}
+                <a
+                  className="underline decoration-slate-400 underline-offset-2 hover:text-slate-900"
+                  href={profile.linkedin}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  LinkedIn
+                </a>
               </p>
             </header>
 

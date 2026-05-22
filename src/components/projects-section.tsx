@@ -24,14 +24,14 @@ import { cn } from "@/lib/utils";
 const accentStyles = {
   teal: {
     badge: "cyan" as const,
-    glow: "from-cyan-300/[0.18] via-emerald-300/[0.12] to-transparent",
+    glow: "from-cyan-300/18 via-emerald-300/12 to-transparent",
     border: "border-cyan-300/20",
     text: "text-cyan-100",
     bar: "bg-[linear-gradient(90deg,#22d3ee,#34d399,#fbbf24)]",
   },
   amber: {
     badge: "amber" as const,
-    glow: "from-amber-300/[0.18] via-rose-300/10 to-transparent",
+    glow: "from-amber-300/18 via-rose-300/10 to-transparent",
     border: "border-amber-300/20",
     text: "text-amber-100",
     bar: "bg-[linear-gradient(90deg,#fbbf24,#fb7185,#22d3ee)]",
@@ -42,11 +42,12 @@ export function ProjectsSection() {
   return (
     <section
       id="projects"
-      className="section-shell"
+      className="section-shell scroll-mt-20"
       aria-labelledby="projects-heading"
     >
       <Reveal>
         <SectionHeading
+          headingId="projects-heading"
           eyebrow="Featured Projects"
           title="Case studies that show real product-building capability."
           description="These projects are positioned as evidence of system thinking: multi-layer architecture, responsive UI, debugging, workflow validation, and the discipline to turn requirements into usable software."
@@ -77,7 +78,7 @@ function ProjectCaseStudy({
       <article
         id={project.id}
         className={cn(
-          "relative overflow-hidden rounded-lg border bg-white/[0.04] shadow-[0_24px_100px_rgba(0,0,0,0.3)]",
+          "relative overflow-hidden rounded-lg border bg-white/4 shadow-[0_24px_100px_rgba(0,0,0,0.3)]",
           accent.border,
         )}
       >
@@ -101,7 +102,7 @@ function ProjectCaseStudy({
             <p className="mt-4 text-base leading-7 text-zinc-300">
               {project.summary}
             </p>
-            <p className="mt-4 rounded-lg border border-white/10 bg-black/[0.24] p-4 text-sm leading-6 text-zinc-300">
+            <p className="mt-4 rounded-lg border border-white/10 bg-black/24 p-4 text-sm leading-6 text-zinc-300">
               <span className={cn("font-medium", accent.text)}>Impact: </span>
               {project.impact}
             </p>
@@ -110,7 +111,7 @@ function ProjectCaseStudy({
               {project.stack.map((item) => (
                 <span
                   key={item}
-                  className="rounded-md border border-white/10 bg-white/[0.055] px-2.5 py-1.5 text-xs font-medium text-zinc-200"
+                  className="rounded-md border border-white/10 bg-white/5.5 px-2.5 py-1.5 text-xs font-medium text-zinc-200"
                 >
                   {item}
                 </span>
@@ -121,14 +122,14 @@ function ProjectCaseStudy({
               <Button asChild variant="secondary">
                 <a href={project.githubUrl} target="_blank" rel="noreferrer">
                   <GitHubIcon className="h-4 w-4" />
-                  GitHub
+                  View Repo
                   <ArrowUpRight className="h-4 w-4" />
                 </a>
               </Button>
               <Button asChild>
                 <a href={project.demoUrl}>
                   <ExternalLink className="h-4 w-4" />
-                  Live Demo
+                  Request Demo
                 </a>
               </Button>
             </div>
@@ -177,7 +178,7 @@ function CaseStudyColumn({
   return (
     <div className="rounded-lg border border-white/10 bg-black/20 p-4">
       <div className="mb-4 flex items-center gap-2 text-sm font-semibold text-white">
-        <span className="grid h-7 w-7 place-items-center rounded-lg border border-white/10 bg-white/[0.06] text-cyan-100">
+        <span className="grid h-7 w-7 place-items-center rounded-lg border border-white/10 bg-white/6 text-cyan-100">
           {icon}
         </span>
         {title}
@@ -204,7 +205,7 @@ function ProjectMockup({ project }: { project: Project }) {
   const accent = accentStyles[project.accent];
 
   return (
-    <div className="relative min-h-[420px] overflow-hidden rounded-lg border border-white/[0.12] bg-[#090c11] p-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] sm:p-4">
+    <div className="relative min-h-[420px] overflow-hidden rounded-lg border border-white/12 bg-[#090c11] p-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] sm:p-4">
       <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.06),transparent_35%,rgba(255,255,255,0.03))]" />
       <div className="relative overflow-hidden rounded-lg border border-white/10 bg-[#0f141b]">
         <div className="flex items-center justify-between border-b border-white/10 px-4 py-3">
@@ -222,34 +223,34 @@ function ProjectMockup({ project }: { project: Project }) {
       </div>
 
       <div className="relative mt-4 grid gap-3 sm:grid-cols-[0.72fr_0.28fr]">
-        <div className="rounded-lg border border-white/10 bg-white/[0.045] p-4">
+        <div className="rounded-lg border border-white/10 bg-white/4.5 p-4">
           <div className="mb-3 flex items-center justify-between">
             <p className="text-sm font-medium text-white">Responsive preview</p>
             <Smartphone className={cn("h-4 w-4", accent.text)} />
           </div>
           <div className="grid grid-cols-[1fr_0.62fr_0.42fr] gap-3">
-            <div className="h-20 rounded-lg border border-white/10 bg-black/[0.24] p-2">
+            <div className="h-20 rounded-lg border border-white/10 bg-black/24 p-2">
               <div className={cn("mb-2 h-2 rounded-md", accent.bar)} />
               <div className="grid grid-cols-3 gap-1">
-                <span className="h-10 rounded-md bg-white/[0.08]" />
-                <span className="h-10 rounded-md bg-white/[0.08]" />
-                <span className="h-10 rounded-md bg-white/[0.08]" />
+                <span className="h-10 rounded-md bg-white/8" />
+                <span className="h-10 rounded-md bg-white/8" />
+                <span className="h-10 rounded-md bg-white/8" />
               </div>
             </div>
-            <div className="h-20 rounded-lg border border-white/10 bg-black/[0.24] p-2">
-              <div className="mb-2 h-2 rounded-md bg-white/[0.12]" />
+            <div className="h-20 rounded-lg border border-white/10 bg-black/24 p-2">
+              <div className="mb-2 h-2 rounded-md bg-white/12" />
               <div className="space-y-1">
-                <span className="block h-3 rounded-md bg-white/[0.08]" />
-                <span className="block h-3 rounded-md bg-white/[0.08]" />
-                <span className="block h-3 rounded-md bg-white/[0.08]" />
+                <span className="block h-3 rounded-md bg-white/8" />
+                <span className="block h-3 rounded-md bg-white/8" />
+                <span className="block h-3 rounded-md bg-white/8" />
               </div>
             </div>
-            <div className="h-20 rounded-lg border border-white/10 bg-black/[0.24] p-2">
+            <div className="h-20 rounded-lg border border-white/10 bg-black/24 p-2">
               <div className={cn("mx-auto h-full w-8 rounded-md", accent.bar)} />
             </div>
           </div>
         </div>
-        <div className="rounded-lg border border-white/10 bg-white/[0.045] p-4">
+        <div className="rounded-lg border border-white/10 bg-white/4.5 p-4">
           <p className="text-sm font-medium text-white">UI showcase</p>
           <p className="mt-2 text-xs leading-5 text-zinc-500">
             {isSaas
@@ -265,14 +266,14 @@ function ProjectMockup({ project }: { project: Project }) {
 function SaasDashboard({ accentBar }: { accentBar: string }) {
   return (
     <div className="grid gap-4 p-4 lg:grid-cols-[0.28fr_0.72fr]">
-      <aside className="hidden rounded-lg border border-white/10 bg-black/[0.22] p-3 lg:block">
+      <aside className="hidden rounded-lg border border-white/10 bg-black/22 p-3 lg:block">
         <p className="mb-4 text-xs font-medium text-zinc-500">Camilo&apos;s SaaS</p>
         {["Overview", "Bookings", "Clients", "Menus", "Tenant"].map((item, index) => (
           <div
             key={item}
             className={cn(
               "mb-2 rounded-md px-3 py-2 text-xs",
-              index === 0 ? "bg-white text-black" : "bg-white/[0.04] text-zinc-400",
+              index === 0 ? "bg-white text-black" : "bg-white/4 text-zinc-400",
             )}
           >
             {item}
@@ -282,7 +283,7 @@ function SaasDashboard({ accentBar }: { accentBar: string }) {
       <main className="space-y-4">
         <div className="grid gap-3 sm:grid-cols-3">
           {["Active tenants", "Orders", "Revenue"].map((item, index) => (
-            <div key={item} className="rounded-lg border border-white/10 bg-white/[0.045] p-3">
+            <div key={item} className="rounded-lg border border-white/10 bg-white/4.5 p-3">
               <p className="text-xs text-zinc-500">{item}</p>
               <p className="mt-2 text-2xl font-semibold text-white">
                 {index === 0 ? "04" : index === 1 ? "128" : "82%"}
@@ -290,7 +291,7 @@ function SaasDashboard({ accentBar }: { accentBar: string }) {
             </div>
           ))}
         </div>
-        <div className="rounded-lg border border-white/10 bg-black/[0.24] p-4">
+        <div className="rounded-lg border border-white/10 bg-black/24 p-4">
           <div className="mb-4 flex items-center justify-between">
             <p className="text-sm font-medium text-white">Catering workflow</p>
             <span className="rounded-md border border-emerald-300/20 bg-emerald-300/10 px-2 py-1 text-xs text-emerald-100">
@@ -315,20 +316,20 @@ function SaasDashboard({ accentBar }: { accentBar: string }) {
 function TourismDashboard({ accentBar }: { accentBar: string }) {
   return (
     <div className="grid gap-4 p-4 lg:grid-cols-[0.58fr_0.42fr]">
-      <div className="rounded-lg border border-white/10 bg-black/[0.24] p-4">
+      <div className="rounded-lg border border-white/10 bg-black/24 p-4">
         <div className="mb-4 flex items-center justify-between">
           <p className="text-sm font-medium text-white">Route guidance</p>
           <Route className="h-4 w-4 text-amber-100" />
         </div>
         <div className="relative h-56 rounded-lg border border-white/10 bg-[#111820] p-4">
-          <div className="absolute left-8 top-9 h-32 w-[72%] border-l-2 border-t-2 border-dashed border-amber-200/[0.45]" />
+          <div className="absolute left-8 top-9 h-32 w-[72%] border-l-2 border-t-2 border-dashed border-amber-200/45" />
           <div className="absolute left-8 top-9 h-4 w-4 rounded-full bg-cyan-200 shadow-[0_0_18px_rgba(103,232,249,0.6)]" />
           <div className="absolute right-10 top-36 h-5 w-5 rounded-md bg-amber-200 shadow-[0_0_18px_rgba(252,211,77,0.55)]" />
           <div className="absolute bottom-5 left-5 right-5 grid grid-cols-3 gap-2">
             {["Start", "Fare", "Route"].map((item) => (
               <span
                 key={item}
-                className="rounded-md border border-white/10 bg-white/[0.06] px-2 py-2 text-center text-xs text-zinc-300"
+                className="rounded-md border border-white/10 bg-white/6 px-2 py-2 text-center text-xs text-zinc-300"
               >
                 {item}
               </span>
@@ -337,27 +338,27 @@ function TourismDashboard({ accentBar }: { accentBar: string }) {
         </div>
       </div>
       <div className="space-y-4">
-        <div className="rounded-lg border border-white/10 bg-white/[0.045] p-4">
+        <div className="rounded-lg border border-white/10 bg-white/4.5 p-4">
           <div className="mb-3 flex items-center gap-2">
             <QrCode className="h-4 w-4 text-cyan-100" />
             <p className="text-sm font-medium text-white">QR workflow</p>
           </div>
-          <div className="grid h-24 grid-cols-5 gap-1 rounded-lg border border-white/10 bg-black/[0.24] p-2">
+          <div className="grid h-24 grid-cols-5 gap-1 rounded-lg border border-white/10 bg-black/24 p-2">
             {Array.from({ length: 25 }).map((_, index) => (
               <span
                 key={index}
                 className={cn(
                   "rounded-[2px]",
-                  index % 3 === 0 || index % 7 === 0 ? accentBar : "bg-white/[0.08]",
+                  index % 3 === 0 || index % 7 === 0 ? accentBar : "bg-white/8",
                 )}
               />
             ))}
           </div>
         </div>
-        <div className="rounded-lg border border-white/10 bg-white/[0.045] p-4">
+        <div className="rounded-lg border border-white/10 bg-white/4.5 p-4">
           <p className="text-sm font-medium text-white">Fare estimate</p>
           <p className="mt-2 text-3xl font-semibold text-white">₱42</p>
-          <div className="mt-4 h-2 overflow-hidden rounded-md bg-white/[0.08]">
+          <div className="mt-4 h-2 overflow-hidden rounded-md bg-white/8">
             <div className={cn("h-full w-3/4 rounded-md", accentBar)} />
           </div>
         </div>

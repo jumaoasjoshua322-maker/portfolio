@@ -10,6 +10,11 @@ type SectionHeadingProps = {
   icon?: ReactNode;
   align?: "left" | "center";
   className?: string;
+  /**
+   * DOM id applied to the rendered <h2>. When set, parent <section>
+   * elements can reference it via `aria-labelledby` for screen readers.
+   */
+  headingId?: string;
 };
 
 export function SectionHeading({
@@ -19,6 +24,7 @@ export function SectionHeading({
   icon,
   align = "left",
   className,
+  headingId,
 }: SectionHeadingProps) {
   return (
     <div
@@ -35,7 +41,10 @@ export function SectionHeading({
         {icon}
         {eyebrow}
       </Badge>
-      <h2 className="text-3xl font-semibold leading-tight text-white sm:text-4xl">
+      <h2
+        id={headingId}
+        className="text-3xl font-semibold leading-tight text-white sm:text-4xl"
+      >
         {title}
       </h2>
       <p className="mt-4 text-base leading-7 text-zinc-400 sm:text-lg">

@@ -46,9 +46,14 @@ export function ContactSection() {
   }
 
   return (
-    <section id="contact" className="section-shell" aria-labelledby="contact-heading">
+    <section
+      id="contact"
+      className="section-shell scroll-mt-20"
+      aria-labelledby="contact-heading"
+    >
       <Reveal>
         <SectionHeading
+          headingId="contact-heading"
           eyebrow="Contact"
           title="Open to teams and clients who need a sharp, fast-learning builder."
           description="Reach out for internships, OJT evaluations, junior software roles, associate engineering openings, startup product work, or freelance full-stack systems."
@@ -62,12 +67,12 @@ export function ContactSection() {
           <aside className="space-y-4">
             <div className="rounded-lg border border-emerald-300/20 bg-emerald-300/10 p-5">
               <div className="flex items-start gap-4">
-                <div className="grid h-11 w-11 shrink-0 place-items-center rounded-lg border border-emerald-300/25 bg-emerald-300/[0.12] text-emerald-100">
+                <div className="grid h-11 w-11 shrink-0 place-items-center rounded-lg border border-emerald-300/25 bg-emerald-300/12 text-emerald-100">
                   <BriefcaseBusiness className="h-5 w-5" />
                 </div>
                 <div>
                   <p className="font-semibold text-white">Open to opportunities</p>
-                  <p className="mt-2 text-sm leading-6 text-emerald-50/[0.78]">
+                  <p className="mt-2 text-sm leading-6 text-emerald-50/78">
                     Joshua is positioned for internship, OJT, junior developer,
                     associate software engineer, and freelance full-stack roles.
                   </p>
@@ -100,9 +105,9 @@ export function ContactSection() {
                 href={item.href}
                 target={item.href.startsWith("http") ? "_blank" : undefined}
                 rel={item.href.startsWith("http") ? "noreferrer" : undefined}
-                className="group flex items-center gap-4 rounded-lg border border-white/10 bg-white/[0.045] p-4 transition hover:-translate-y-1 hover:border-cyan-300/25 hover:bg-white/[0.065]"
+                className="group flex items-center gap-4 rounded-lg border border-white/10 bg-white/4.5 p-4 transition hover:-translate-y-1 hover:border-cyan-300/25 hover:bg-white/6.5"
               >
-                <div className="grid h-10 w-10 place-items-center rounded-lg border border-white/10 bg-black/[0.24] text-cyan-100">
+                <div className="grid h-10 w-10 place-items-center rounded-lg border border-white/10 bg-black/24 text-cyan-100">
                   <item.icon className="h-5 w-5" />
                 </div>
                 <div>
@@ -117,7 +122,7 @@ export function ContactSection() {
         <Reveal delay={0.08}>
           <form
             onSubmit={handleSubmit}
-            className="rounded-lg border border-white/10 bg-white/[0.045] p-5 shadow-[0_24px_100px_rgba(0,0,0,0.28)] sm:p-6"
+            className="rounded-lg border border-white/10 bg-white/4.5 p-5 shadow-[0_24px_100px_rgba(0,0,0,0.28)] sm:p-6"
           >
             <div className="grid gap-4 sm:grid-cols-2">
               <label className="space-y-2">

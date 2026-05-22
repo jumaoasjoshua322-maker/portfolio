@@ -43,8 +43,31 @@ export default function ResumePage() {
           </p>
           <h1 className="mt-2 text-4xl font-semibold">{profile.name}</h1>
           <p className="mt-3 text-sm leading-6 text-slate-600">
-            {profile.location} | {profile.email} | {profile.github} |{" "}
-            {profile.linkedin}
+            {profile.location} |{" "}
+            <a
+              className="underline decoration-slate-400 underline-offset-2 hover:text-slate-900"
+              href={`mailto:${profile.email}`}
+            >
+              {profile.email}
+            </a>{" "}
+            |{" "}
+            <a
+              className="underline decoration-slate-400 underline-offset-2 hover:text-slate-900"
+              href={profile.github}
+              target="_blank"
+              rel="noreferrer"
+            >
+              GitHub
+            </a>{" "}
+            |{" "}
+            <a
+              className="underline decoration-slate-400 underline-offset-2 hover:text-slate-900"
+              href={profile.linkedin}
+              target="_blank"
+              rel="noreferrer"
+            >
+              LinkedIn
+            </a>
           </p>
         </header>
 

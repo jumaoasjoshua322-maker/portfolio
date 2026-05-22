@@ -10,14 +10,15 @@ export function ExperienceSection() {
   return (
     <section
       id="experience"
-      className="section-shell"
+      className="section-shell scroll-mt-20"
       aria-labelledby="experience-heading"
     >
       <Reveal>
         <SectionHeading
+          headingId="experience-heading"
           eyebrow="Experience and Training"
           title="Academic work framed as professional development practice."
-          description="Joshua's experience is strongest when presented as applied software delivery: collaboration, capstone development, debugging, testing, research, and iterative implementation."
+          description="My experience is strongest when presented as applied software delivery: collaboration, capstone development, debugging, testing, research, and iterative implementation."
           icon={<Bug className="h-3.5 w-3.5" />}
         />
       </Reveal>
@@ -27,12 +28,12 @@ export function ExperienceSection() {
           const Icon = icons[index] ?? FlaskConical;
           return (
             <Reveal key={item.title} delay={index * 0.08}>
-              <article className="group h-full rounded-lg border border-white/10 bg-white/[0.045] p-5 transition hover:-translate-y-1 hover:border-emerald-300/25 hover:bg-white/[0.065]">
+              <article className="group h-full rounded-lg border border-white/10 bg-white/4.5 p-5 transition hover:-translate-y-1 hover:border-emerald-300/25 hover:bg-white/6.5">
                 <div className="mb-5 flex items-center justify-between gap-4">
                   <div className="grid h-11 w-11 place-items-center rounded-lg border border-emerald-300/20 bg-emerald-300/10 text-emerald-100">
                     <Icon className="h-5 w-5" />
                   </div>
-                  <span className="rounded-md border border-white/10 bg-black/[0.24] px-2.5 py-1 text-xs text-zinc-500">
+                  <span className="rounded-md border border-white/10 bg-black/24 px-2.5 py-1 text-xs text-zinc-500">
                     {item.period}
                   </span>
                 </div>
@@ -46,7 +47,7 @@ export function ExperienceSection() {
                   {item.points.map((point) => (
                     <div
                       key={point}
-                      className="flex items-center gap-2 rounded-md border border-white/10 bg-black/[0.18] px-3 py-2 text-sm text-zinc-300"
+                      className="flex items-center gap-2 rounded-md border border-white/10 bg-black/18 px-3 py-2 text-sm text-zinc-300"
                     >
                       <span className="h-1.5 w-1.5 rounded-full bg-cyan-200" />
                       {point}

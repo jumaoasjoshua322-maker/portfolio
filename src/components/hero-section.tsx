@@ -15,9 +15,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { GitHubIcon, LinkedInIcon } from "@/components/social-icons";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { brandSignals, heroMetrics, profile } from "@/data/portfolio";
-
-const stack = ["React.js", "Node.js", "MongoDB", "REST APIs", "Git", "AI-assisted"];
+import { brandSignals, heroMetrics, heroStack, profile } from "@/data/portfolio";
 
 export function HeroSection() {
   const prefersReducedMotion = useReducedMotion();
@@ -25,7 +23,7 @@ export function HeroSection() {
   return (
     <section
       id="home"
-      className="relative isolate overflow-hidden border-b border-white/[0.08]"
+      className="relative isolate overflow-hidden border-b border-white/8 scroll-mt-20"
       aria-labelledby="hero-heading"
     >
       <div className="hero-gradient absolute inset-0 -z-20" />
@@ -55,8 +53,8 @@ export function HeroSection() {
               id="hero-heading"
               className="max-w-4xl text-5xl font-semibold leading-[1.02] text-white sm:text-6xl lg:text-7xl"
             >
-              Joshua Jumao-as builds systems that feel sharp, useful, and ready
-              for real users.
+              I build web systems that feel sharp, useful, and ready for real
+              users.
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-zinc-300 sm:text-xl">
               {profile.headline} {profile.shortIntro}
@@ -78,7 +76,7 @@ export function HeroSection() {
             <Button asChild variant="secondary" size="lg">
               <a href="#contact">
                 <Mail className="h-5 w-5" />
-                Contact Joshua
+                Get in touch
                 <ArrowRight className="h-4 w-4" />
               </a>
             </Button>
@@ -120,10 +118,10 @@ export function HeroSection() {
               Core stack and delivery signals
             </p>
             <div className="flex flex-wrap gap-2">
-              {stack.map((item) => (
+              {heroStack.map((item) => (
                 <span
                   key={item}
-                  className="rounded-md border border-white/10 bg-white/[0.045] px-3 py-2 text-sm text-zinc-200"
+                  className="rounded-md border border-white/10 bg-white/4.5 px-3 py-2 text-sm text-zinc-200"
                 >
                   {item}
                 </span>
@@ -137,10 +135,10 @@ export function HeroSection() {
           animate={prefersReducedMotion ? undefined : { opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1], delay: 0.18 }}
           className="relative"
-          aria-label="Visual summary of Joshua's engineering workflow"
+          aria-label="Visual summary of my engineering workflow"
         >
           <div className="absolute -inset-4 -z-10 bg-[linear-gradient(135deg,rgba(45,212,191,0.14),rgba(251,191,36,0.09),rgba(244,63,94,0.08))] blur-2xl" />
-          <div className="overflow-hidden rounded-lg border border-white/[0.12] bg-[#0c0f14]/[0.88] shadow-[0_24px_100px_rgba(0,0,0,0.45)] backdrop-blur-xl">
+          <div className="overflow-hidden rounded-lg border border-white/12 bg-[#0c0f14]/88 shadow-[0_24px_100px_rgba(0,0,0,0.45)] backdrop-blur-xl">
             <div className="flex items-center justify-between border-b border-white/10 px-4 py-3">
               <div className="flex items-center gap-2">
                 <span className="h-2.5 w-2.5 rounded-full bg-rose-300" />
@@ -150,7 +148,7 @@ export function HeroSection() {
               <span className="font-mono text-xs text-zinc-500">builder.workflow.ts</span>
             </div>
             <div className="grid gap-4 p-4 sm:p-5">
-              <div className="rounded-lg border border-cyan-300/20 bg-cyan-300/[0.08] p-4">
+              <div className="rounded-lg border border-cyan-300/20 bg-cyan-300/8 p-4">
                 <div className="flex items-start justify-between gap-3">
                   <div>
                     <p className="text-sm font-medium text-cyan-100">
@@ -173,7 +171,7 @@ export function HeroSection() {
                 ].map((item) => (
                   <div
                     key={item.label}
-                    className="rounded-lg border border-white/10 bg-white/[0.045] p-3"
+                    className="rounded-lg border border-white/10 bg-white/4.5 p-3"
                   >
                     <item.icon className="mb-3 h-5 w-5 text-emerald-200" />
                     <p className="text-xs text-zinc-500">{item.label}</p>
@@ -182,7 +180,7 @@ export function HeroSection() {
                 ))}
               </div>
 
-              <div className="rounded-lg border border-white/10 bg-black/[0.28] p-4">
+              <div className="rounded-lg border border-white/10 bg-black/28 p-4">
                 <div className="mb-3 flex items-center justify-between">
                   <p className="text-sm font-medium text-white">Delivery pipeline</p>
                   <ShieldCheck className="h-5 w-5 text-emerald-200" />
@@ -191,7 +189,7 @@ export function HeroSection() {
                   {brandSignals.slice(0, 5).map((signal, index) => (
                     <div key={signal} className="grid grid-cols-[92px_1fr] items-center gap-3">
                       <span className="text-xs text-zinc-500">0{index + 1}</span>
-                      <div className="h-2 overflow-hidden rounded-md bg-white/[0.08]">
+                      <div className="h-2 overflow-hidden rounded-md bg-white/8">
                         <motion.div
                           className="h-full rounded-md bg-[linear-gradient(90deg,#67e8f9,#6ee7b7,#fcd34d)]"
                           initial={prefersReducedMotion ? false : { width: "18%" }}
@@ -210,7 +208,7 @@ export function HeroSection() {
                 {heroMetrics.map((metric) => (
                   <div
                     key={metric.label}
-                    className="rounded-lg border border-white/10 bg-white/[0.045] p-4"
+                    className="rounded-lg border border-white/10 bg-white/4.5 p-4"
                   >
                     <p className="text-2xl font-semibold text-white">{metric.value}</p>
                     <p className="mt-1 text-xs leading-5 text-zinc-500">

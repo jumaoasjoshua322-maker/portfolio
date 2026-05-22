@@ -6,7 +6,7 @@ import { profile } from "@/data/portfolio";
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-white/[0.08] bg-[#07080b]">
+    <footer className="border-t border-white/8 bg-[#07080b]">
       <div className="mx-auto flex w-full max-w-7xl flex-col gap-5 px-4 py-8 sm:px-6 md:flex-row md:items-center md:justify-between lg:px-8">
         <div>
           <p className="font-semibold text-white">Joshua Jumao-as</p>

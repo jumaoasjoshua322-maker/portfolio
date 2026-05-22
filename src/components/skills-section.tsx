@@ -56,12 +56,17 @@ export function SkillsSection() {
   }, [activeFilter]);
 
   return (
-    <section id="skills" className="section-shell" aria-labelledby="skills-heading">
+    <section
+      id="skills"
+      className="section-shell scroll-mt-20"
+      aria-labelledby="skills-heading"
+    >
       <Reveal>
         <SectionHeading
+          headingId="skills-heading"
           eyebrow="Technical Skills"
           title="A focused stack for modern web systems."
-          description="The skill set is intentionally practical: frontend polish, backend workflows, database integration, collaboration tools, and the testing habits needed to ship dependable student, startup, and freelance projects."
+          description="My skill set is intentionally practical: frontend polish, backend workflows, database integration, collaboration tools, and the testing habits needed to ship dependable student, startup, and freelance projects."
           icon={<Code2 className="h-3.5 w-3.5" />}
           align="center"
         />
@@ -69,7 +74,7 @@ export function SkillsSection() {
 
       <Reveal delay={0.05}>
         <div
-          className="mx-auto mb-8 flex max-w-4xl flex-wrap justify-center gap-2 rounded-lg border border-white/10 bg-white/[0.035] p-2"
+          className="mx-auto mb-8 flex max-w-4xl flex-wrap justify-center gap-2 rounded-lg border border-white/10 bg-white/3.5 p-2"
           role="tablist"
           aria-label="Skill filters"
         >
@@ -87,7 +92,7 @@ export function SkillsSection() {
                   "inline-flex h-10 items-center gap-2 rounded-lg px-3 text-sm font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/60",
                   selected
                     ? "bg-white text-black shadow-[0_10px_30px_rgba(255,255,255,0.12)]"
-                    : "text-zinc-400 hover:bg-white/[0.06] hover:text-white",
+                    : "text-zinc-400 hover:bg-white/6 hover:text-white",
                 )}
               >
                 <Icon className="h-4 w-4" />
@@ -114,7 +119,7 @@ export function SkillsSection() {
                 animate={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
                 exit={prefersReducedMotion ? undefined : { opacity: 0, y: -10 }}
                 transition={{ duration: 0.28 }}
-                className="group rounded-lg border border-white/10 bg-white/[0.045] p-4 shadow-[0_16px_60px_rgba(0,0,0,0.2)] transition hover:-translate-y-1 hover:border-cyan-300/25 hover:bg-white/[0.065]"
+                className="group rounded-lg border border-white/10 bg-white/4.5 p-4 shadow-[0_16px_60px_rgba(0,0,0,0.2)] transition hover:-translate-y-1 hover:border-cyan-300/25 hover:bg-white/6.5"
               >
                 <div className="flex items-start justify-between gap-3">
                   <div
@@ -135,7 +140,7 @@ export function SkillsSection() {
                 <p className="mt-2 min-h-18 text-sm leading-6 text-zinc-400">
                   {skill.proof}
                 </p>
-                <div className="mt-5 h-2 overflow-hidden rounded-md bg-white/[0.08]">
+                <div className="mt-5 h-2 overflow-hidden rounded-md bg-white/8">
                   <motion.div
                     className="h-full rounded-md bg-[linear-gradient(90deg,#22d3ee,#34d399,#fbbf24)]"
                     initial={prefersReducedMotion ? false : { width: 0 }}
@@ -145,7 +150,7 @@ export function SkillsSection() {
                   />
                 </div>
                 <div className="mt-4 flex items-center justify-between">
-                  <span className="rounded-md border border-white/10 bg-black/[0.24] px-2 py-1 text-xs text-zinc-400">
+                  <span className="rounded-md border border-white/10 bg-black/24 px-2 py-1 text-xs text-zinc-400">
                     {skill.category}
                   </span>
                   <Button

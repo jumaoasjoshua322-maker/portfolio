@@ -31,18 +31,29 @@ export type Project = {
 
 export const profile = {
   name: "Joshua Jumao-as",
-  role: "Computer Engineering Student and Full-Stack Developer",
+  role: "Computer Engineering Student and Aspiring Software Engineer",
   location: "Cebu, Philippines",
   headline:
     "Building modern web systems with clean design and practical engineering.",
   shortIntro:
     "I design and build responsive, database-connected web systems that turn academic and real-world workflows into usable products.",
-  availability: "Available for internships, junior roles, OJT, and freelance builds",
-  email: "joshua.jumaoas.dev@gmail.com",
-  github: "https://github.com/joshuajumaoas",
-  linkedin: "https://www.linkedin.com/in/joshuajumaoas",
+  availability: "Available for junior roles and freelance builds.",
+  email: "jumaoas.joshuaa@gmail.com",
+  github: "https://github.com/jumaoasjoshua322-maker",
+  linkedin: "https://www.linkedin.com/in/joshua-jumao-as-492772251/",
+  // TODO: replace `Joshua-Jumao-as-Resume.txt` with a real PDF in /public
+  // and update this path to `/Joshua-Jumao-as-Resume.pdf`.
   resumePath: "/Joshua-Jumao-as-Resume.txt",
 };
+
+export const heroStack = [
+  "React.js",
+  "Node.js",
+  "MongoDB",
+  "REST APIs",
+  "Git",
+  "AI-assisted",
+];
 
 export const brandSignals = [
   "Full-stack workflows",
@@ -55,16 +66,16 @@ export const brandSignals = [
 
 export const heroMetrics = [
   {
+    value: "Full-stack",
+    label: "End-to-end web systems",
+  },
+  {
     value: "2",
-    label: "Product-grade systems",
+    label: "Case-study projects",
   },
   {
-    value: "8+",
-    label: "Core technologies",
-  },
-  {
-    value: "Top 8",
-    label: "Differential Equations recognition",
+    value: "Remote",
+    label: "Cebu, Philippines",
   },
 ];
 
@@ -238,8 +249,9 @@ export const projects: Project[] = [
     ],
     performance:
       "Focused on organized state, reusable components, and lean dashboard screens so frequent actions stay quick on everyday devices.",
-    githubUrl: "https://github.com/joshuajumaoas",
-    demoUrl: "mailto:joshua.jumaoas.dev@gmail.com?subject=Camilo's%20Catering%20SaaS%20demo%20request",
+    githubUrl: "https://github.com/jumaoasjoshua322-maker/camilocatering",
+    demoUrl:
+      "mailto:jumaoas.joshuaa@gmail.com?subject=Camilo's%20Catering%20SaaS%20demo%20request",
     accent: "teal",
   },
   {
@@ -279,8 +291,9 @@ export const projects: Project[] = [
     ],
     performance:
       "Prioritized fast-loading screens, clear touch targets, and direct route information for users who may be on unstable mobile connections.",
-    githubUrl: "https://github.com/joshuajumaoas",
-    demoUrl: "mailto:joshua.jumaoas.dev@gmail.com?subject=ARIAT-Na%20demo%20request",
+    githubUrl: "https://github.com/Shaloh69/ARIAT-Na",
+    demoUrl:
+      "mailto:jumaoas.joshuaa@gmail.com?subject=ARIAT-Na%20demo%20request",
     accent: "amber",
   },
 ];
