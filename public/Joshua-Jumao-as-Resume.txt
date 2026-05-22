@@ -1,0 +1,45 @@
+JOSHUA JUMAO-AS
+Computer Engineering Student | Aspiring Software Engineer | Full-Stack Developer
+Cebu, Philippines
+Email: joshua.jumaoas.dev@gmail.com
+GitHub: https://github.com/joshuajumaoas
+LinkedIn: https://www.linkedin.com/in/joshuajumaoas
+
+PROFESSIONAL SUMMARY
+Computer Engineering student with full-stack development experience across web-based systems, frontend development, database integration, responsive UI design, REST-style workflows, debugging, software collaboration, and AI-assisted development. Passionate about practical systems, clean interfaces, continuous learning, and building software that supports real user workflows.
+
+CORE TECHNICAL SKILLS
+Frontend: HTML, CSS, JavaScript, React.js
+Backend: Node.js, REST APIs
+Database: MongoDB, database integration
+Tools: VS Code, Git, GitHub, ChatGPT, Claude Code, GitHub Copilot
+Professional: Problem-solving, analytical thinking, team collaboration, attention to detail, fast learning, organized workflow management
+Other: Responsive design, debugging, system testing, UI/UX awareness
+
+PROJECTS
+Camilo's Catering SaaS Platform
+- Built a multi-tenant SaaS platform for catering operations.
+- Worked across React.js, Node.js, MongoDB, authentication, responsive UI, debugging, and full-stack workflows.
+- Focused on authenticated workflows, system organization, dashboard usability, scalability mindset, and optimization.
+
+ARIAT-Na Smart Tourist Guide & Fare Estimation System
+- Built a smart tourism platform with fare estimation, route guidance, QR code integration, kiosk support, and mobile-friendly access.
+- Focused on responsive design, workflow validation, system testing, and real-world usability.
+- Designed around practical tourist decision flows and accessible interface patterns.
+
+EDUCATION
+BS Computer Engineering
+University of Cebu Lapu-Lapu and Mandaue
+Cebu, Philippines
+
+ACHIEVEMENTS
+Top 8 Differential Equations Exam recognition
+
+EXPERIENCE AND TRAINING
+Academic Collaboration and Capstone Development
+- Planned and implemented full-stack project workflows.
+- Collaborated with project teams through organized tasks and software debugging.
+- Performed testing, optimization, research, and project implementation.
+
+CERTIFICATIONS
+Placeholder: Add cloud, web development, database, or software engineering certifications as completed.
