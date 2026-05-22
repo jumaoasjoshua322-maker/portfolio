@@ -50,13 +50,11 @@ export async function POST(request: Request) {
 
   const parsed = ContactPayload.safeParse(json);
   if (!parsed.success) {
-    return NextResponse.json(
-      {
-        error: "Validation failed.",
-        issues: parsed.error.flatten().fieldErrors,
-      },
-      { status: 400 },
-    );
+    // Pick the first issue and surface it as a single readable line.
+    // Fall back to a generic message if zod ever returns no issues.
+    const firstIssue = parsed.error.issues[0];
+    const message = firstIssue?.message ?? "Please check the form fields.";
+    return NextResponse.json({ error: message }, { status: 400 });
   }
 
   const { name, email, type, message, website } = parsed.data;

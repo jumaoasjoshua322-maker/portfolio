@@ -184,7 +184,13 @@ export function ContactSection() {
             <div className="grid gap-4 sm:grid-cols-2">
               <label className="space-y-2">
                 <span className="text-sm font-medium text-zinc-300">Name</span>
-                <Input name="name" placeholder="Your name" required />
+                <Input
+                  name="name"
+                  placeholder="Your name"
+                  required
+                  minLength={2}
+                  maxLength={80}
+                />
               </label>
               <label className="space-y-2">
                 <span className="text-sm font-medium text-zinc-300">Email</span>
@@ -193,6 +199,7 @@ export function ContactSection() {
                   type="email"
                   placeholder="you@example.com"
                   required
+                  maxLength={120}
                 />
               </label>
             </div>
@@ -222,9 +229,10 @@ export function ContactSection() {
               <span className="text-sm font-medium text-zinc-300">Message</span>
               <Textarea
                 name="message"
-                placeholder="Tell Joshua about the role, project, timeline, or next step."
+                placeholder="Tell Joshua about the role, project, timeline, or next step. (10+ characters)"
                 required
                 minLength={10}
+                maxLength={4000}
               />
             </label>
 
@@ -259,19 +267,21 @@ export function ContactSection() {
             ) : null}
 
             {formState.status === "error" ? (
-              <p
+              <div
                 className="mt-4 flex items-start gap-2 rounded-lg border border-rose-300/25 bg-rose-300/10 px-3 py-2 text-sm text-rose-100"
                 role="alert"
               >
                 <AlertCircle className="mt-0.5 h-4 w-4 shrink-0" />
-                {formState.message}{" "}
-                <a
-                  className="underline underline-offset-2"
-                  href={`mailto:${profile.email}`}
-                >
-                  Email me directly.
-                </a>
-              </p>
+                <p>
+                  {formState.message}{" "}
+                  <a
+                    className="underline underline-offset-2"
+                    href={`mailto:${profile.email}`}
+                  >
+                    Email me directly.
+                  </a>
+                </p>
+              </div>
             ) : null}
           </form>
         </Reveal>
