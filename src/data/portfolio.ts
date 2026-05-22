@@ -40,9 +40,12 @@ export type Project = {
    * these instead of the stylized fallback mockup.
    */
   screenshots?: {
-    desktop: ProjectScreenshot;
-    mobile: ProjectScreenshot;
+    /** Browser chrome label (e.g. "ariat-na.onrender.com"). */
     chromeLabel: string;
+    /** Hero shot — shown full-width at the top of the mockup card. */
+    hero: ProjectScreenshot;
+    /** Two supporting shots, rendered side-by-side beneath the hero. */
+    supporting: [ProjectScreenshot, ProjectScreenshot];
   };
 };
 
@@ -103,7 +106,7 @@ export const aboutTimeline = [
       "Expected graduation from the University of Cebu Lapu-Lapu and Mandaue. Building a foundation in systems thinking, logic design, programming, and practical engineering.",
   },
   {
-    year: "Capstone",
+    year: "THESIS",
     title: "ARIAT-Na thesis project",
     description:
       "Contributed to a smart tourist assistance system providing fare estimation, route guidance, and itinerary planning for Cebu Province, with kiosk and mobile-friendly interfaces.",
@@ -325,18 +328,26 @@ export const projects: Project[] = [
     accent: "amber",
     screenshots: {
       chromeLabel: "ariat-na.onrender.com",
-      desktop: {
-        src: "/projects/ariat-na/desktop-hero.png",
-        alt: "ARIAT-Na desktop home with Cebu region cards and featured destinations.",
-        width: 2880,
-        height: 1800,
+      hero: {
+        src: "/projects/ariat-na/discover-cebu.png",
+        alt: "ARIAT-Na kiosk landing page with the Discover Cebu hero and a prompt to scan a QR code to continue on a phone.",
+        width: 1919,
+        height: 881,
       },
-      mobile: {
-        src: "/projects/ariat-na/mobile.png",
-        alt: "ARIAT-Na mobile home view showing region cards on a phone-sized layout.",
-        width: 1170,
-        height: 2379,
-      },
+      supporting: [
+        {
+          src: "/projects/ariat-na/plan-my-trip.png",
+          alt: "Plan My Trip screen offering two paths: Pick Destinations or AI Suggest, with the AI option highlighted as recommended.",
+          width: 1913,
+          height: 807,
+        },
+        {
+          src: "/projects/ariat-na/cebu-trip.png",
+          alt: "1-Day Cebu Day Trip itinerary card showing trip metadata and a Start Journey QR call to action.",
+          width: 1919,
+          height: 878,
+        },
+      ],
     },
   },
 ];
