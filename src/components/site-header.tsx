@@ -71,7 +71,7 @@ export function SiteHeader() {
             </a>
           </Button>
           <Button asChild variant="secondary" size="sm">
-            <a href={`mailto:${profile.email}`}>
+            <a href="#contact">
               <Mail className="h-4 w-4" />
               Contact
             </a>
@@ -119,7 +119,7 @@ export function SiteHeader() {
             ))}
             <div className="mt-3 grid grid-cols-2 gap-2">
               <Button asChild variant="secondary">
-                <a href={`mailto:${profile.email}`}>
+                <a href="#contact">
                   <Mail className="h-4 w-4" />
                   Contact
                 </a>
