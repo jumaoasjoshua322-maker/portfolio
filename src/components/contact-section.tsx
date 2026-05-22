@@ -1,8 +1,10 @@
 "use client";
 
 import {
+  AlertCircle,
   BriefcaseBusiness,
   CheckCircle2,
+  Loader2,
   Mail,
   MessageSquare,
   Send,
@@ -25,25 +27,63 @@ const opportunityTypes = [
   "Startup collaboration",
 ];
 
+type FormState =
+  | { status: "idle" }
+  | { status: "submitting" }
+  | { status: "success" }
+  | { status: "error"; message: string };
+
 export function ContactSection() {
-  const [status, setStatus] = useState<string | null>(null);
+  const [formState, setFormState] = useState<FormState>({ status: "idle" });
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const form = new FormData(event.currentTarget);
-    const name = String(form.get("name") ?? "");
-    const email = String(form.get("email") ?? "");
-    const type = String(form.get("type") ?? "");
-    const message = String(form.get("message") ?? "");
+    if (formState.status === "submitting") return;
 
-    const subject = encodeURIComponent(`${type} inquiry for Joshua Jumao-as`);
-    const body = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\nOpportunity: ${type}\n\n${message}`,
-    );
+    const form = event.currentTarget;
+    const data = new FormData(form);
+    const payload = {
+      name: String(data.get("name") ?? ""),
+      email: String(data.get("email") ?? ""),
+      type: String(data.get("type") ?? ""),
+      message: String(data.get("message") ?? ""),
+      // Honeypot — real users leave this empty.
+      website: String(data.get("website") ?? ""),
+    };
 
-    window.location.href = `mailto:${profile.email}?subject=${subject}&body=${body}`;
-    setStatus("Your email app is opening with the message prepared.");
+    setFormState({ status: "submitting" });
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      if (!response.ok) {
+        const json = (await response.json().catch(() => ({}))) as {
+          error?: string;
+        };
+        throw new Error(
+          json.error ??
+            "Something went wrong sending your message. Try again in a moment.",
+        );
+      }
+
+      form.reset();
+      setFormState({ status: "success" });
+    } catch (error) {
+      setFormState({
+        status: "error",
+        message:
+          error instanceof Error
+            ? error.message
+            : "Something went wrong. Try again in a moment.",
+      });
+    }
   }
+
+  const isSubmitting = formState.status === "submitting";
 
   return (
     <section
@@ -123,7 +163,24 @@ export function ContactSection() {
           <form
             onSubmit={handleSubmit}
             className="rounded-xl border border-white/10 bg-white/4.5 p-5 shadow-[0_24px_100px_rgba(0,0,0,0.28)] sm:p-6"
+            noValidate
           >
+            {/* Honeypot — hidden from real users, visible to bots. */}
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute -left-[10000px] -top-[10000px] h-0 w-0 overflow-hidden"
+            >
+              <label>
+                Leave this field empty
+                <input
+                  type="text"
+                  name="website"
+                  tabIndex={-1}
+                  autoComplete="off"
+                />
+              </label>
+            </div>
+
             <div className="grid gap-4 sm:grid-cols-2">
               <label className="space-y-2">
                 <span className="text-sm font-medium text-zinc-300">Name</span>
@@ -131,7 +188,12 @@ export function ContactSection() {
               </label>
               <label className="space-y-2">
                 <span className="text-sm font-medium text-zinc-300">Email</span>
-                <Input name="email" type="email" placeholder="you@example.com" required />
+                <Input
+                  name="email"
+                  type="email"
+                  placeholder="you@example.com"
+                  required
+                />
               </label>
             </div>
 
@@ -145,7 +207,11 @@ export function ContactSection() {
                 className="h-11 w-full rounded-lg border border-white/10 bg-black/30 px-3 py-2 text-sm text-white outline-none transition focus:border-cyan-300/50 focus:ring-2 focus:ring-cyan-300/15"
               >
                 {opportunityTypes.map((type) => (
-                  <option key={type} value={type} className="bg-[#090b10] text-white">
+                  <option
+                    key={type}
+                    value={type}
+                    className="bg-[#090b10] text-white"
+                  >
                     {type}
                   </option>
                 ))}
@@ -158,23 +224,53 @@ export function ContactSection() {
                 name="message"
                 placeholder="Tell Joshua about the role, project, timeline, or next step."
                 required
+                minLength={10}
               />
             </label>
 
             <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
               <div className="flex items-center gap-2 text-sm text-zinc-400">
                 <CheckCircle2 className="h-4 w-4 text-emerald-200" />
-                Usually best for roles with hands-on product work.
+                Replies usually within a day or two.
               </div>
-              <Button type="submit">
-                <Send className="h-4 w-4" />
-                Send Message
+              <Button type="submit" disabled={isSubmitting} aria-busy={isSubmitting}>
+                {isSubmitting ? (
+                  <>
+                    <Loader2 className="h-4 w-4 animate-spin" />
+                    Sending…
+                  </>
+                ) : (
+                  <>
+                    <Send className="h-4 w-4" />
+                    Send Message
+                  </>
+                )}
               </Button>
             </div>
 
-            {status ? (
-              <p className="mt-4 rounded-lg border border-emerald-300/20 bg-emerald-300/10 px-3 py-2 text-sm text-emerald-100">
-                {status}
+            {formState.status === "success" ? (
+              <p
+                className="mt-4 flex items-start gap-2 rounded-lg border border-emerald-300/20 bg-emerald-300/10 px-3 py-2 text-sm text-emerald-100"
+                role="status"
+              >
+                <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0" />
+                Message sent. I&apos;ll reply to your email shortly.
+              </p>
+            ) : null}
+
+            {formState.status === "error" ? (
+              <p
+                className="mt-4 flex items-start gap-2 rounded-lg border border-rose-300/25 bg-rose-300/10 px-3 py-2 text-sm text-rose-100"
+                role="alert"
+              >
+                <AlertCircle className="mt-0.5 h-4 w-4 shrink-0" />
+                {formState.message}{" "}
+                <a
+                  className="underline underline-offset-2"
+                  href={`mailto:${profile.email}`}
+                >
+                  Email me directly.
+                </a>
               </p>
             ) : null}
           </form>
