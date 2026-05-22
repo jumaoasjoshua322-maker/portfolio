@@ -49,7 +49,7 @@ export const profile = {
   location: "Mandaue City, Cebu, Philippines",
   headline:
     "Based in Cebu, Philippines · Finishing Computer Engineering in June 2026.",
-  availability: "Available for junior roles and freelance builds",
+  availability: "Available for junior developer, associate software engineer, and freelance full-stack roles.",
   email: "jumaoas.joshuaa@gmail.com",
   phone: "+63 967-093-7612",
   github: "https://github.com/jumaoasjoshua322-maker",
@@ -75,29 +75,17 @@ export const aboutTimeline = [
       "Expected graduation from the University of Cebu Lapu-Lapu and Mandaue. Building a foundation in systems thinking, logic design, programming, and practical engineering.",
   },
   {
-    year: "THESIS",
-    title: "ARIAT-Na thesis project",
+    year: "2025–2026",
+    title: "ARIAT-Na — Capstone thesis",
     description:
       "Contributed to a smart tourist assistance system providing fare estimation, route guidance, and itinerary planning for Cebu Province, with kiosk and mobile-friendly interfaces.",
-  },
-  {
-    year: "Workflow",
-    title: "AI-assisted development",
-    description:
-      "Uses ChatGPT, Claude Code, and GitHub Copilot to speed up research, debugging, and implementation planning while keeping engineering judgment in the loop.",
   },
   {
     year: "2023–2024",
     title: "Top 8, Differential Equations Exam",
     description:
-      "Placed in the Top 8 in the Engineering Departmental Differential Equations Exam.",
+      "Placed in the Top 8 in the Engineering Departmental Differential Equations Exam — strongest academic recognition to date.",
   },
-];
-
-export const achievements = [
-  "Top 8 in the Engineering Departmental Differential Equations Exam (2023–2024)",
-  "Built a multi-tenant catering SaaS and a smart tourism capstone end-to-end",
-  "Comfortable collaborating through Git, structured debugging, and iterative testing",
 ];
 
 export const skills: Skill[] = [

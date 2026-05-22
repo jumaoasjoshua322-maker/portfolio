@@ -1,21 +1,11 @@
-import {
-  BrainCircuit,
-  GraduationCap,
-  MapPin,
-  Sparkles,
-  Trophy,
-} from "lucide-react";
+import { GraduationCap, MapPin } from "lucide-react";
 import Image from "next/image";
 
 import { Reveal } from "@/components/reveal";
 import { SectionHeading } from "@/components/section-heading";
-import {
-  aboutTimeline,
-  achievements,
-  profile,
-  resumeHighlights,
-} from "@/data/portfolio";
+import { aboutTimeline, profile, resumeHighlights } from "@/data/portfolio";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { BrainCircuit } from "lucide-react";
 
 export function AboutSection() {
   return (
@@ -35,6 +25,7 @@ export function AboutSection() {
       </Reveal>
 
       <div className="grid gap-5 lg:grid-cols-[0.95fr_1.05fr]">
+        {/* Left column — personal story + education */}
         <Reveal className="space-y-5">
           <Card>
             <CardHeader className="flex flex-row items-center gap-4 space-y-0">
@@ -99,53 +90,31 @@ export function AboutSection() {
           </Card>
         </Reveal>
 
-        <div className="space-y-5">
-          <Reveal>
-            <div className="relative space-y-4">
-              <div className="absolute left-[19px] top-7 hidden h-[calc(100%-3rem)] w-px bg-white/10 sm:block" />
-              {aboutTimeline.map((item, index) => (
-                <div
-                  key={item.title}
-                  className="relative grid gap-4 rounded-xl border border-white/10 bg-white/4 p-4 backdrop-blur-xl sm:grid-cols-[40px_1fr]"
-                >
-                  <div className="grid h-10 w-10 place-items-center rounded-lg border border-white/12 bg-[#10141b] text-sm font-semibold text-cyan-100">
-                    {index + 1}
-                  </div>
-                  <div>
-                    <p className="text-xs font-medium uppercase text-cyan-200/85">
-                      {item.year}
-                    </p>
-                    <h3 className="mt-1 text-lg font-semibold text-white">
-                      {item.title}
-                    </h3>
-                    <p className="mt-2 text-sm leading-6 text-zinc-400">
-                      {item.description}
-                    </p>
-                  </div>
+        {/* Right column — clean timeline, no numbers, no achievement cards */}
+        <Reveal delay={0.06}>
+          <div className="relative pl-5">
+            {/* Continuous left border line */}
+            <div className="absolute left-0 top-2 h-[calc(100%-1rem)] w-px bg-white/10" />
+
+            <div className="space-y-8">
+              {aboutTimeline.map((item) => (
+                <div key={item.title} className="relative">
+                  {/* Dot on the line */}
+                  <span className="absolute -left-[21px] top-[6px] h-2.5 w-2.5 rounded-full border border-cyan-300/40 bg-cyan-300/20" />
+                  <p className="text-xs font-medium uppercase tracking-wide text-cyan-200/80">
+                    {item.year}
+                  </p>
+                  <h3 className="mt-1 text-lg font-semibold text-white">
+                    {item.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-6 text-zinc-400">
+                    {item.description}
+                  </p>
                 </div>
               ))}
             </div>
-          </Reveal>
-
-          <Reveal delay={0.14}>
-            <div className="grid gap-3 sm:grid-cols-3">
-              {achievements.map((achievement, index) => {
-                const Icon = index === 0 ? Trophy : index === 1 ? Sparkles : BrainCircuit;
-                return (
-                  <div
-                    key={achievement}
-                    className="rounded-xl border border-white/10 bg-white/4.5 p-4"
-                  >
-                    <Icon className="mb-4 h-5 w-5 text-cyan-200" />
-                    <p className="text-sm leading-6 text-zinc-300">
-                      {achievement}
-                    </p>
-                  </div>
-                );
-              })}
-            </div>
-          </Reveal>
-        </div>
+          </div>
+        </Reveal>
       </div>
     </section>
   );
