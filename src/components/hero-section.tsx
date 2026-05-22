@@ -7,15 +7,13 @@ import {
   Download,
   Mail,
   Server,
-  ShieldCheck,
   Sparkles,
 } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
 
-import { GitHubIcon, LinkedInIcon } from "@/components/social-icons";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { brandSignals, heroMetrics, heroStack, profile } from "@/data/portfolio";
+import { heroStack, profile } from "@/data/portfolio";
 
 export function HeroSection() {
   const prefersReducedMotion = useReducedMotion();
@@ -46,17 +44,17 @@ export function HeroSection() {
             animate={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
             transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1], delay: 0.05 }}
           >
-            <p className="mb-3 text-sm font-medium uppercase text-cyan-200/90">
+            <p className="mb-3 text-sm font-medium uppercase tracking-wide text-cyan-200/90">
               {profile.role}
             </p>
             <h1
               id="hero-heading"
-              className="max-w-4xl text-5xl font-semibold leading-[1.02] text-white sm:text-6xl lg:text-7xl"
+              className="max-w-4xl text-balance text-5xl font-semibold leading-[1.05] tracking-tight text-white sm:text-6xl"
             >
               I build web systems that feel sharp, useful, and ready for real
               users.
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-zinc-300 sm:text-xl">
+            <p className="mt-6 max-w-2xl text-base leading-7 text-zinc-400 sm:text-lg">
               {profile.headline}
             </p>
           </motion.div>
@@ -86,42 +84,16 @@ export function HeroSection() {
             initial={prefersReducedMotion ? false : { opacity: 0, y: 18 }}
             animate={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
             transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1], delay: 0.18 }}
-            className="mt-6 flex flex-wrap items-center gap-3"
+            className="mt-10"
           >
-            <Button asChild variant="ghost" size="sm">
-              <a href={profile.github} target="_blank" rel="noreferrer">
-                <GitHubIcon className="h-4 w-4" />
-                GitHub
-              </a>
-            </Button>
-            <Button asChild variant="ghost" size="sm">
-              <a href={profile.linkedin} target="_blank" rel="noreferrer">
-                <LinkedInIcon className="h-4 w-4" />
-                LinkedIn
-              </a>
-            </Button>
-            <Button asChild variant="ghost" size="sm">
-              <a href={`mailto:${profile.email}`}>
-                <Mail className="h-4 w-4" />
-                Email
-              </a>
-            </Button>
-          </motion.div>
-
-          <motion.div
-            initial={prefersReducedMotion ? false : { opacity: 0, y: 18 }}
-            animate={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
-            transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1], delay: 0.24 }}
-            className="mt-8"
-          >
-            <p className="mb-3 text-xs font-medium uppercase text-zinc-500">
-              Core stack and delivery signals
+            <p className="mb-3 text-xs font-medium uppercase tracking-wide text-zinc-500">
+              Core stack
             </p>
             <div className="flex flex-wrap gap-2">
               {heroStack.map((item) => (
                 <span
                   key={item}
-                  className="rounded-md border border-white/10 bg-white/4.5 px-3 py-2 text-sm text-zinc-200"
+                  className="rounded-md border border-white/10 bg-white/4.5 px-3 py-1.5 text-sm text-zinc-300"
                 >
                   {item}
                 </span>
@@ -137,26 +109,28 @@ export function HeroSection() {
           className="relative"
           aria-label="Visual summary of my engineering workflow"
         >
-          <div className="absolute -inset-4 -z-10 bg-[linear-gradient(135deg,rgba(45,212,191,0.14),rgba(251,191,36,0.09),rgba(244,63,94,0.08))] blur-2xl" />
-          <div className="overflow-hidden rounded-lg border border-white/12 bg-[#0c0f14]/88 shadow-[0_24px_100px_rgba(0,0,0,0.45)] backdrop-blur-xl">
+          <div className="absolute -inset-4 -z-10 bg-[radial-gradient(ellipse_at_center,rgba(34,211,238,0.18),transparent_70%)] blur-2xl" />
+          <div className="overflow-hidden rounded-xl border border-white/12 bg-[#0c0f14]/88 shadow-[0_24px_100px_rgba(0,0,0,0.45)] backdrop-blur-xl">
             <div className="flex items-center justify-between border-b border-white/10 px-4 py-3">
               <div className="flex items-center gap-2">
                 <span className="h-2.5 w-2.5 rounded-full bg-rose-300" />
                 <span className="h-2.5 w-2.5 rounded-full bg-amber-300" />
                 <span className="h-2.5 w-2.5 rounded-full bg-emerald-300" />
               </div>
-              <span className="font-mono text-xs text-zinc-500">builder.workflow.ts</span>
+              <span className="font-mono text-xs text-zinc-500">
+                builder.workflow.ts
+              </span>
             </div>
-            <div className="grid gap-4 p-4 sm:p-5">
-              <div className="rounded-lg border border-cyan-300/20 bg-cyan-300/8 p-4">
+            <div className="grid gap-4 p-5">
+              <div className="rounded-xl border border-cyan-300/20 bg-cyan-300/8 p-4">
                 <div className="flex items-start justify-between gap-3">
                   <div>
                     <p className="text-sm font-medium text-cyan-100">
                       Product mindset
                     </p>
                     <p className="mt-2 text-sm leading-6 text-zinc-400">
-                      Translate workflows into interfaces, APIs, data models, and
-                      tested user paths.
+                      Translate workflows into interfaces, APIs, data models,
+                      and tested user paths.
                     </p>
                   </div>
                   <Sparkles className="h-5 w-5 text-cyan-200" />
@@ -171,48 +145,14 @@ export function HeroSection() {
                 ].map((item) => (
                   <div
                     key={item.label}
-                    className="rounded-lg border border-white/10 bg-white/4.5 p-3"
+                    className="rounded-xl border border-white/10 bg-white/4.5 p-4"
                   >
-                    <item.icon className="mb-3 h-5 w-5 text-emerald-200" />
-                    <p className="text-xs text-zinc-500">{item.label}</p>
-                    <p className="mt-1 text-sm font-medium text-white">{item.value}</p>
-                  </div>
-                ))}
-              </div>
-
-              <div className="rounded-lg border border-white/10 bg-black/28 p-4">
-                <div className="mb-3 flex items-center justify-between">
-                  <p className="text-sm font-medium text-white">Delivery pipeline</p>
-                  <ShieldCheck className="h-5 w-5 text-emerald-200" />
-                </div>
-                <div className="space-y-3">
-                  {brandSignals.slice(0, 5).map((signal, index) => (
-                    <div key={signal} className="grid grid-cols-[92px_1fr] items-center gap-3">
-                      <span className="text-xs text-zinc-500">0{index + 1}</span>
-                      <div className="h-2 overflow-hidden rounded-md bg-white/8">
-                        <motion.div
-                          className="h-full rounded-md bg-[linear-gradient(90deg,#67e8f9,#6ee7b7,#fcd34d)]"
-                          initial={prefersReducedMotion ? false : { width: "18%" }}
-                          whileInView={prefersReducedMotion ? undefined : { width: `${74 + index * 4}%` }}
-                          viewport={{ once: true }}
-                          transition={{ duration: 0.8, delay: 0.25 + index * 0.08 }}
-                        />
-                      </div>
-                      <span className="col-start-2 text-xs text-zinc-300">{signal}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="grid gap-3 sm:grid-cols-3">
-                {heroMetrics.map((metric) => (
-                  <div
-                    key={metric.label}
-                    className="rounded-lg border border-white/10 bg-white/4.5 p-4"
-                  >
-                    <p className="text-2xl font-semibold text-white">{metric.value}</p>
-                    <p className="mt-1 text-xs leading-5 text-zinc-500">
-                      {metric.label}
+                    <item.icon className="mb-3 h-5 w-5 text-cyan-200" />
+                    <p className="text-xs uppercase tracking-wide text-zinc-500">
+                      {item.label}
+                    </p>
+                    <p className="mt-1 text-sm font-medium text-white">
+                      {item.value}
                     </p>
                   </div>
                 ))}

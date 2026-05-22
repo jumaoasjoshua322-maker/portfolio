@@ -65,7 +65,7 @@ export function ContactSection() {
       <div className="grid gap-6 lg:grid-cols-[0.88fr_1.12fr]">
         <Reveal>
           <aside className="space-y-4">
-            <div className="rounded-lg border border-emerald-300/20 bg-emerald-300/10 p-5">
+            <div className="rounded-xl border border-emerald-300/20 bg-emerald-300/10 p-5">
               <div className="flex items-start gap-4">
                 <div className="grid h-11 w-11 shrink-0 place-items-center rounded-lg border border-emerald-300/25 bg-emerald-300/12 text-emerald-100">
                   <BriefcaseBusiness className="h-5 w-5" />
@@ -105,7 +105,7 @@ export function ContactSection() {
                 href={item.href}
                 target={item.href.startsWith("http") ? "_blank" : undefined}
                 rel={item.href.startsWith("http") ? "noreferrer" : undefined}
-                className="group flex items-center gap-4 rounded-lg border border-white/10 bg-white/4.5 p-4 transition hover:-translate-y-1 hover:border-cyan-300/25 hover:bg-white/6.5"
+                className="group flex items-center gap-4 rounded-xl border border-white/10 bg-white/4.5 p-4 transition hover:-translate-y-1 hover:border-cyan-300/25 hover:bg-white/6.5"
               >
                 <div className="grid h-10 w-10 place-items-center rounded-lg border border-white/10 bg-black/24 text-cyan-100">
                   <item.icon className="h-5 w-5" />
@@ -122,7 +122,7 @@ export function ContactSection() {
         <Reveal delay={0.08}>
           <form
             onSubmit={handleSubmit}
-            className="rounded-lg border border-white/10 bg-white/4.5 p-5 shadow-[0_24px_100px_rgba(0,0,0,0.28)] sm:p-6"
+            className="rounded-xl border border-white/10 bg-white/4.5 p-5 shadow-[0_24px_100px_rgba(0,0,0,0.28)] sm:p-6"
           >
             <div className="grid gap-4 sm:grid-cols-2">
               <label className="space-y-2">

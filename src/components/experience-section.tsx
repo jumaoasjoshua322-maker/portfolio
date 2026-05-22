@@ -28,7 +28,7 @@ export function ExperienceSection() {
           const Icon = icons[index] ?? FlaskConical;
           return (
             <Reveal key={item.title} delay={index * 0.08}>
-              <article className="group h-full rounded-lg border border-white/10 bg-white/4.5 p-5 transition hover:-translate-y-1 hover:border-emerald-300/25 hover:bg-white/6.5">
+              <article className="group h-full rounded-xl border border-white/10 bg-white/4.5 p-5 transition hover:-translate-y-1 hover:border-cyan-300/25 hover:bg-white/6.5">
                 <div className="mb-5 flex items-center justify-between gap-4">
                   <div className="grid h-11 w-11 place-items-center rounded-lg border border-emerald-300/20 bg-emerald-300/10 text-emerald-100">
                     <Icon className="h-5 w-5" />

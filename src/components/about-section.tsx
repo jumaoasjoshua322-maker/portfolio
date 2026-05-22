@@ -100,19 +100,19 @@ export function AboutSection() {
         </Reveal>
 
         <div className="space-y-5">
-          <Reveal delay={0.08}>
+          <Reveal>
             <div className="relative space-y-4">
               <div className="absolute left-[19px] top-7 hidden h-[calc(100%-3rem)] w-px bg-white/10 sm:block" />
               {aboutTimeline.map((item, index) => (
                 <div
                   key={item.title}
-                  className="relative grid gap-4 rounded-lg border border-white/10 bg-white/4 p-4 backdrop-blur-xl sm:grid-cols-[40px_1fr]"
+                  className="relative grid gap-4 rounded-xl border border-white/10 bg-white/4 p-4 backdrop-blur-xl sm:grid-cols-[40px_1fr]"
                 >
                   <div className="grid h-10 w-10 place-items-center rounded-lg border border-white/12 bg-[#10141b] text-sm font-semibold text-cyan-100">
                     {index + 1}
                   </div>
                   <div>
-                    <p className="text-xs font-medium uppercase text-emerald-200/85">
+                    <p className="text-xs font-medium uppercase text-cyan-200/85">
                       {item.year}
                     </p>
                     <h3 className="mt-1 text-lg font-semibold text-white">
@@ -134,9 +134,9 @@ export function AboutSection() {
                 return (
                   <div
                     key={achievement}
-                    className="rounded-lg border border-white/10 bg-white/4.5 p-4"
+                    className="rounded-xl border border-white/10 bg-white/4.5 p-4"
                   >
-                    <Icon className="mb-4 h-5 w-5 text-amber-200" />
+                    <Icon className="mb-4 h-5 w-5 text-cyan-200" />
                     <p className="text-sm leading-6 text-zinc-300">
                       {achievement}
                     </p>

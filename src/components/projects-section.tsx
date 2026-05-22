@@ -25,17 +25,19 @@ import { cn } from "@/lib/utils";
 const accentStyles = {
   teal: {
     badge: "cyan" as const,
-    glow: "from-cyan-300/18 via-emerald-300/12 to-transparent",
+    glow: "from-cyan-300/18 via-cyan-300/8 to-transparent",
     border: "border-cyan-300/20",
     text: "text-cyan-100",
-    bar: "bg-[linear-gradient(90deg,#22d3ee,#34d399,#fbbf24)]",
+    bar: "bg-[linear-gradient(90deg,#22d3ee,#67e8f9,#a5f3fc)]",
   },
   amber: {
-    badge: "amber" as const,
-    glow: "from-amber-300/18 via-rose-300/10 to-transparent",
-    border: "border-amber-300/20",
-    text: "text-amber-100",
-    bar: "bg-[linear-gradient(90deg,#fbbf24,#fb7185,#22d3ee)]",
+    // Aliased to the cyan accent so the brand stays single-accent.
+    // The data layer still tags projects "amber" semantically.
+    badge: "cyan" as const,
+    glow: "from-cyan-300/18 via-cyan-300/8 to-transparent",
+    border: "border-cyan-300/20",
+    text: "text-cyan-100",
+    bar: "bg-[linear-gradient(90deg,#22d3ee,#67e8f9,#a5f3fc)]",
   },
 };
 
@@ -79,7 +81,7 @@ function ProjectCaseStudy({
       <article
         id={project.id}
         className={cn(
-          "relative overflow-hidden rounded-lg border bg-white/4 shadow-[0_24px_100px_rgba(0,0,0,0.3)]",
+          "relative overflow-hidden rounded-xl border bg-white/4 shadow-[0_24px_100px_rgba(0,0,0,0.3)]",
           accent.border,
         )}
       >
@@ -225,7 +227,7 @@ function ProjectScreenshots({ project }: { project: Project }) {
   const { hero, supporting, chromeLabel } = project.screenshots!;
 
   return (
-    <div className="relative min-h-[420px] overflow-hidden rounded-lg border border-white/12 bg-[#090c11] p-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] sm:p-4">
+    <div className="relative min-h-[420px] overflow-hidden rounded-xl border border-white/12 bg-[#090c11] p-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] sm:p-4">
       <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.06),transparent_35%,rgba(255,255,255,0.03))]" />
 
       <BrowserFrame label={chromeLabel}>
@@ -276,7 +278,7 @@ function BrowserFrame({
   children: ReactNode;
 }) {
   return (
-    <div className="relative overflow-hidden rounded-lg border border-white/10 bg-[#0f141b]">
+    <div className="relative overflow-hidden rounded-xl border border-white/10 bg-[#0f141b]">
       <div className="flex items-center justify-between border-b border-white/10 px-4 py-3">
         <div className="flex items-center gap-2">
           <span className="h-2.5 w-2.5 rounded-full bg-rose-300" />
@@ -295,9 +297,9 @@ function ProjectStylizedMockup({ project }: { project: Project }) {
   const accent = accentStyles[project.accent];
 
   return (
-    <div className="relative min-h-[420px] overflow-hidden rounded-lg border border-white/12 bg-[#090c11] p-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] sm:p-4">
+    <div className="relative min-h-[420px] overflow-hidden rounded-xl border border-white/12 bg-[#090c11] p-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] sm:p-4">
       <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.06),transparent_35%,rgba(255,255,255,0.03))]" />
-      <div className="relative overflow-hidden rounded-lg border border-white/10 bg-[#0f141b]">
+      <div className="relative overflow-hidden rounded-xl border border-white/10 bg-[#0f141b]">
         <div className="flex items-center justify-between border-b border-white/10 px-4 py-3">
           <div className="flex items-center gap-2">
             <span className="h-2.5 w-2.5 rounded-full bg-rose-300" />

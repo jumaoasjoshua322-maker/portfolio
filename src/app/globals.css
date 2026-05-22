@@ -13,7 +13,7 @@
   --color-foreground: var(--foreground);
   --color-muted: var(--muted);
   --color-panel: var(--panel);
-  --font-sans: "Inter", "SF Pro Display", "Segoe UI", Arial, sans-serif;
+  --font-sans: var(--font-inter), "SF Pro Display", "Segoe UI", Arial, sans-serif;
   --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
 }
 
@@ -31,8 +31,7 @@ body {
   overflow-x: hidden;
   background:
     linear-gradient(180deg, rgba(7, 8, 11, 0.96), rgba(7, 8, 11, 1) 42%),
-    linear-gradient(135deg, rgba(34, 211, 238, 0.08), transparent 36%),
-    linear-gradient(315deg, rgba(251, 191, 36, 0.07), transparent 38%),
+    linear-gradient(135deg, rgba(34, 211, 238, 0.06), transparent 36%),
     var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
@@ -64,11 +63,9 @@ select {
 
 .hero-gradient {
   background:
-    linear-gradient(115deg, rgba(34, 211, 238, 0.14), transparent 34%),
-    linear-gradient(245deg, rgba(251, 191, 36, 0.12), transparent 36%),
+    radial-gradient(ellipse 60% 80% at 18% 12%, rgba(34, 211, 238, 0.18), transparent 60%),
+    radial-gradient(ellipse 55% 70% at 85% 90%, rgba(103, 232, 249, 0.10), transparent 60%),
     linear-gradient(180deg, #07080b 0%, #0a0d12 46%, #07080b 100%);
-  background-size: 160% 160%, 180% 180%, 100% 100%;
-  animation: gradient-shift 18s ease-in-out infinite;
 }
 
 .grid-overlay {
@@ -77,16 +74,6 @@ select {
     linear-gradient(90deg, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
   background-size: 44px 44px;
   mask-image: linear-gradient(to bottom, black, transparent 92%);
-}
-
-@keyframes gradient-shift {
-  0%,
-  100% {
-    background-position: 0% 50%, 100% 50%, center;
-  }
-  50% {
-    background-position: 100% 50%, 0% 50%, center;
-  }
 }
 
 @media (min-width: 640px) {

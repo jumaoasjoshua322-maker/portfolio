@@ -37,7 +37,7 @@ export function ResumeSection() {
 
       <div className="grid gap-6 lg:grid-cols-[0.8fr_1.2fr]">
         <Reveal>
-          <aside className="sticky top-24 rounded-lg border border-white/10 bg-white/4.5 p-5">
+          <aside className="sticky top-24 rounded-xl border border-white/10 bg-white/4.5 p-5">
             <div className="grid h-12 w-12 place-items-center rounded-lg border border-cyan-300/20 bg-cyan-300/10 text-cyan-100">
               <FileText className="h-6 w-6" />
             </div>
@@ -71,7 +71,7 @@ export function ResumeSection() {
         </Reveal>
 
         <Reveal delay={0.08}>
-          <article className="rounded-lg border border-white/12 bg-[#f8fafc] p-5 text-slate-950 shadow-[0_24px_100px_rgba(0,0,0,0.32)] sm:p-8">
+          <article className="rounded-xl border border-white/12 bg-[#f8fafc] p-5 text-slate-950 shadow-[0_24px_100px_rgba(0,0,0,0.32)] sm:p-8">
             <header className="border-b border-slate-200 pb-5">
               <p className="text-sm font-medium uppercase text-slate-500">
                 {profile.role}

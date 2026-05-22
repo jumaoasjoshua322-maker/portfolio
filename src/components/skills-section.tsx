@@ -30,13 +30,13 @@ const categoryMeta: Record<
     label: "Backend & data",
     description: "APIs, persistence, and full-stack glue.",
     icon: Server,
-    tone: "text-emerald-100 border-emerald-300/20 bg-emerald-300/10",
+    tone: "text-zinc-100 border-white/15 bg-white/8",
   },
   Tools: {
     label: "Tooling & engineering",
     description: "How I move from idea to running product.",
     icon: TerminalSquare,
-    tone: "text-amber-100 border-amber-300/20 bg-amber-300/10",
+    tone: "text-zinc-100 border-white/15 bg-white/8",
   },
 };
 
@@ -80,7 +80,7 @@ export function SkillsSection() {
                     <h3 className="text-lg font-semibold text-white">
                       {meta.label}
                     </h3>
-                    <p className="text-sm text-zinc-500">{meta.description}</p>
+                    <p className="text-sm text-zinc-400">{meta.description}</p>
                   </div>
                 </div>
 
@@ -88,7 +88,7 @@ export function SkillsSection() {
                   {items.map((skill) => (
                     <li
                       key={skill.name}
-                      className="rounded-lg border border-white/10 bg-white/4.5 p-4 transition hover:border-white/20 hover:bg-white/6"
+                      className="rounded-xl border border-white/10 bg-white/4.5 p-4 transition hover:border-cyan-300/25 hover:bg-white/6"
                     >
                       <div className="flex items-start justify-between gap-3">
                         <h4 className="text-base font-semibold text-white">
