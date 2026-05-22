@@ -111,10 +111,6 @@ export default function ResumePage() {
             ))}
           </div>
         </ResumeBlock>
-
-        <ResumeBlock title="Certifications">
-          <p>{resumeHighlights.certifications[0]}</p>
-        </ResumeBlock>
       </article>
     </main>
   );

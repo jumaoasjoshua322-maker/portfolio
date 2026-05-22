@@ -37,8 +37,8 @@ export const profile = {
     "Building modern web systems with clean design and practical engineering.",
   shortIntro:
     "I design and build responsive, database-connected web systems that turn academic and real-world workflows into usable products.",
-  availability: "Available for internships, junior roles, OJT, and freelance builds",
-  email: "joshua.jumaoas@gmail.com",
+  availability: "Available for junior roles and freelance builds",
+  email: "joshua.jumaoas@gmail.com", 
   phone: "+63 967-093-7612",
   github: "https://github.com/jumaoasjoshua322-maker",
   linkedin: "https://www.linkedin.com/in/joshua-jumao-as-492772251/",
@@ -357,8 +357,5 @@ export const resumeHighlights = {
     "University of Cebu Lapu-Lapu and Mandaue",
     "Mandaue City, Cebu, Philippines",
     "Expected Graduation: June 16, 2026",
-  ],
-  certifications: [
-    "Certifications placeholder: add cloud, web development, or database credentials as completed.",
   ],
 };

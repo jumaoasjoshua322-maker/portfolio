@@ -1,5 +1,4 @@
 import {
-  Award,
   BriefcaseBusiness,
   CheckCircle2,
   Download,
@@ -142,10 +141,6 @@ export function ResumeSection() {
                   </div>
                 ))}
               </div>
-            </ResumeBlock>
-
-            <ResumeBlock title="Certifications" icon={<Award className="h-4 w-4" />}>
-              <p>{resumeHighlights.certifications[0]}</p>
             </ResumeBlock>
           </article>
         </Reveal>
