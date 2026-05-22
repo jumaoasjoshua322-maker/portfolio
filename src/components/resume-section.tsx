@@ -86,7 +86,7 @@ export function ResumeSection() {
                 >
                   {profile.email}
                 </a>{" "}
-                |{" "}
+                | {profile.phone} |{" "}
                 <a
                   className="underline decoration-slate-400 underline-offset-2 hover:text-slate-900"
                   href={profile.github}

@@ -1,45 +1,66 @@
 JOSHUA JUMAO-AS
-Computer Engineering Student | Aspiring Software Engineer | Full-Stack Developer
-Cebu, Philippines
-Email: joshua.jumaoas.dev@gmail.com
-GitHub: https://github.com/joshuajumaoas
-LinkedIn: https://www.linkedin.com/in/joshuajumaoas
+Computer Engineering Student | Aspiring Software Engineer
+Mandaue City, Cebu, Philippines | joshua.jumaoas@gmail.com | +63 967-093-7612
+LinkedIn: https://www.linkedin.com/in/joshua-jumao-as-492772251/
+GitHub:   https://github.com/jumaoasjoshua322-maker
 
 PROFESSIONAL SUMMARY
-Computer Engineering student with full-stack development experience across web-based systems, frontend development, database integration, responsive UI design, REST-style workflows, debugging, software collaboration, and AI-assisted development. Passionate about practical systems, clean interfaces, continuous learning, and building software that supports real user workflows.
-
-CORE TECHNICAL SKILLS
-Frontend: HTML, CSS, JavaScript, React.js
-Backend: Node.js, REST APIs
-Database: MongoDB, database integration
-Tools: VS Code, Git, GitHub, ChatGPT, Claude Code, GitHub Copilot
-Professional: Problem-solving, analytical thinking, team collaboration, attention to detail, fast learning, organized workflow management
-Other: Responsive design, debugging, system testing, UI/UX awareness
-
-PROJECTS
-Camilo's Catering SaaS Platform
-- Built a multi-tenant SaaS platform for catering operations.
-- Worked across React.js, Node.js, MongoDB, authentication, responsive UI, debugging, and full-stack workflows.
-- Focused on authenticated workflows, system organization, dashboard usability, scalability mindset, and optimization.
-
-ARIAT-Na Smart Tourist Guide & Fare Estimation System
-- Built a smart tourism platform with fare estimation, route guidance, QR code integration, kiosk support, and mobile-friendly access.
-- Focused on responsive design, workflow validation, system testing, and real-world usability.
-- Designed around practical tourist decision flows and accessible interface patterns.
+Computer Engineering student with experience in full-stack development, web-based
+systems, and software project collaboration. Familiar with front-end development,
+database integration, AI-assisted workflows, debugging, and responsive interface
+design. Passionate about building practical systems and continuously improving
+technical skills through academic and personal projects.
 
 EDUCATION
-BS Computer Engineering
+Bachelor of Science in Computer Engineering
 University of Cebu Lapu-Lapu and Mandaue
-Cebu, Philippines
+Mandaue City, Cebu, Philippines
+Expected Graduation: June 16, 2026
+- Top 8 in the Engineering Departmental Differential Equations Exam (2023-2024)
 
-ACHIEVEMENTS
-Top 8 Differential Equations Exam recognition
+CORE SKILLS
+Software Development:
+- HTML, CSS, JavaScript
+- React.js and Node.js fundamentals
+- REST APIs and database integration
+- Git and GitHub version control
 
-EXPERIENCE AND TRAINING
-Academic Collaboration and Capstone Development
-- Planned and implemented full-stack project workflows.
-- Collaborated with project teams through organized tasks and software debugging.
-- Performed testing, optimization, research, and project implementation.
+Development Tools:
+- VS Code
+- GitHub
+- ChatGPT, Claude Code, GitHub Copilot
 
-CERTIFICATIONS
-Placeholder: Add cloud, web development, database, or software engineering certifications as completed.
+Professional Skills:
+- Problem-solving and analytical thinking
+- Team collaboration
+- Attention to detail
+- Adaptability and fast learning
+- Organized workflow and task management
+
+PROJECTS & TRAINING EXPERIENCE
+
+Camilo's Catering SaaS Platform                                            2026
+Personal Full-Stack Development Project                       Cebu, Philippines
+Technologies: JavaScript, React.js, Node.js, MongoDB, GitHub, AI-Assisted Tools
+- Developed a multi-tenant catering management web application with modern UI
+  and organized digital workflows.
+- Worked with front-end and back-end technologies including authentication,
+  database integration, and responsive layouts.
+- Applied structured debugging, testing, and optimization practices to improve
+  usability and system reliability.
+- Assisted in organizing project structure, feature implementation, and overall
+  system functionality.
+Repository: https://github.com/jumaoasjoshua322-maker/camilocatering
+
+ARIAT-Na Smart Tourist Guide and Fare Estimation System              2025-2026
+Capstone / Thesis Project                                     Cebu, Philippines
+Technologies: JavaScript, HTML/CSS, QR Code Integration, Responsive Interface
+              Design, GitHub
+- Contributed to a smart tourist assistance system that provides fare
+  estimation, route guidance, and itinerary planning for Cebu Province.
+- Assisted in designing user-friendly interfaces for kiosk and mobile access.
+- Participated in system testing, workflow validation, and functionality
+  improvements to ensure accurate and reliable performance.
+- Worked collaboratively in integrating digital tools and structured system
+  processes for tourist convenience.
+Repository: https://github.com/Shaloh69/ARIAT-Na

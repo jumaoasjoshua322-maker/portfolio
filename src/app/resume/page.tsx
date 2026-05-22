@@ -50,7 +50,7 @@ export default function ResumePage() {
             >
               {profile.email}
             </a>{" "}
-            |{" "}
+            | {profile.phone} |{" "}
             <a
               className="underline decoration-slate-400 underline-offset-2 hover:text-slate-900"
               href={profile.github}
@@ -82,7 +82,8 @@ export default function ResumePage() {
             ))}
           </ul>
           <p className="mt-2 font-medium">
-            Achievement: Top 8 Differential Equations Exam recognition
+            Achievement: Top 8, Engineering Departmental Differential Equations
+            Exam (2023–2024)
           </p>
         </ResumeBlock>
 

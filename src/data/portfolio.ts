@@ -31,18 +31,19 @@ export type Project = {
 
 export const profile = {
   name: "Joshua Jumao-as",
-  role: "Computer Engineering Student and Aspiring Software Engineer",
-  location: "Cebu, Philippines",
+  role: "Computer Engineering Student | Aspiring Software Engineer",
+  location: "Mandaue City, Cebu, Philippines",
   headline:
     "Building modern web systems with clean design and practical engineering.",
   shortIntro:
     "I design and build responsive, database-connected web systems that turn academic and real-world workflows into usable products.",
-  availability: "Available for junior roles and freelance builds.",
-  email: "jumaoas.joshuaa@gmail.com",
+  availability: "Available for internships, junior roles, OJT, and freelance builds",
+  email: "joshua.jumaoas@gmail.com",
+  phone: "+63 967-093-7612",
   github: "https://github.com/jumaoasjoshua322-maker",
   linkedin: "https://www.linkedin.com/in/joshua-jumao-as-492772251/",
-  // TODO: replace `Joshua-Jumao-as-Resume.txt` with a real PDF in /public
-  // and update this path to `/Joshua-Jumao-as-Resume.pdf`.
+  // Drop a real PDF named `Joshua-Jumao-as-Resume.pdf` into /public,
+  // then change this path to `/Joshua-Jumao-as-Resume.pdf`.
   resumePath: "/Joshua-Jumao-as-Resume.txt",
 };
 
@@ -74,41 +75,41 @@ export const heroMetrics = [
     label: "Case-study projects",
   },
   {
-    value: "Remote",
-    label: "Cebu, Philippines",
+    value: "Jun 2026",
+    label: "Expected graduation",
   },
 ];
 
 export const aboutTimeline = [
   {
-    year: "Present",
+    year: "Jun 2026",
     title: "BS Computer Engineering",
     description:
-      "Developing a foundation in systems thinking, logic design, programming, and practical engineering at the University of Cebu Lapu-Lapu and Mandaue.",
+      "Expected graduation from the University of Cebu Lapu-Lapu and Mandaue. Building a foundation in systems thinking, logic design, programming, and practical engineering.",
   },
   {
     year: "Capstone",
-    title: "Full-stack product building",
+    title: "ARIAT-Na thesis project",
     description:
-      "Built and tested web systems that combine frontend interfaces, backend workflows, database integration, and real user scenarios.",
+      "Contributed to a smart tourist assistance system providing fare estimation, route guidance, and itinerary planning for Cebu Province, with kiosk and mobile-friendly interfaces.",
   },
   {
     year: "Workflow",
     title: "AI-assisted development",
     description:
-      "Uses ChatGPT, Claude Code, and GitHub Copilot to speed up research, debugging, implementation planning, and code review while keeping engineering judgment in the loop.",
+      "Uses ChatGPT, Claude Code, and GitHub Copilot to speed up research, debugging, and implementation planning while keeping engineering judgment in the loop.",
   },
   {
-    year: "Recognition",
-    title: "Top 8 Differential Equations Exam",
+    year: "2023–2024",
+    title: "Top 8, Differential Equations Exam",
     description:
-      "Recognized for strong analytical performance in a demanding engineering mathematics subject.",
+      "Placed in the Top 8 in the Engineering Departmental Differential Equations Exam.",
   },
 ];
 
 export const achievements = [
-  "Top 8 Differential Equations Exam recognition",
-  "Built multi-tenant and smart tourism systems with full-stack workflows",
+  "Top 8 in the Engineering Departmental Differential Equations Exam (2023–2024)",
+  "Built a multi-tenant catering SaaS and a smart tourism capstone end-to-end",
   "Comfortable collaborating through Git, structured debugging, and iterative testing",
 ];
 
@@ -134,38 +135,38 @@ export const skills: Skill[] = [
   {
     name: "React.js",
     category: "Frontend",
-    level: 82,
+    level: 78,
     proof: "Component-driven dashboards, responsive views, and reusable UI logic.",
   },
   {
     name: "Node.js",
     category: "Backend",
-    level: 78,
-    proof: "Backend routes, API workflows, authentication logic, and system services.",
+    level: 74,
+    proof: "Backend routes, API workflows, and full-stack integration in catering SaaS.",
   },
   {
     name: "REST APIs",
     category: "Backend",
-    level: 77,
+    level: 74,
     proof: "Structured client-server communication and data-driven features.",
   },
   {
     name: "MongoDB",
     category: "Database",
-    level: 76,
-    proof: "Document data modeling for SaaS and workflow-heavy applications.",
+    level: 72,
+    proof: "Document data modeling for the multi-tenant catering platform.",
   },
   {
     name: "Database integration",
     category: "Database",
-    level: 80,
+    level: 76,
     proof: "Connecting frontend flows to persistent records and admin-ready data.",
   },
   {
-    name: "GitHub",
+    name: "Git & GitHub",
     category: "Tools",
-    level: 82,
-    proof: "Repository organization, collaboration, and implementation tracking.",
+    level: 84,
+    proof: "Version control, repository organization, and collaboration on shared projects.",
   },
   {
     name: "VS Code",
@@ -174,16 +175,16 @@ export const skills: Skill[] = [
     proof: "Daily development environment for frontend and full-stack work.",
   },
   {
-    name: "Git",
-    category: "Tools",
-    level: 80,
-    proof: "Version control, change tracking, and safer project collaboration.",
-  },
-  {
     name: "AI-assisted tools",
     category: "Tools",
     level: 86,
-    proof: "Uses ChatGPT, Claude Code, and Copilot for research, debugging, and iteration.",
+    proof: "ChatGPT, Claude Code, and GitHub Copilot for research, debugging, and iteration.",
+  },
+  {
+    name: "QR & responsive UI",
+    category: "Engineering",
+    level: 82,
+    proof: "QR-based touchpoints and kiosk/mobile layouts shipped in ARIAT-Na.",
   },
   {
     name: "Responsive design",
@@ -194,20 +195,20 @@ export const skills: Skill[] = [
   {
     name: "Debugging",
     category: "Engineering",
-    level: 84,
+    level: 82,
     proof: "Systematic issue tracing across UI, API, and data layers.",
   },
   {
     name: "System testing",
     category: "Engineering",
-    level: 79,
+    level: 78,
     proof: "Workflow validation, responsive checks, and user-scenario testing.",
   },
   {
-    name: "UI/UX awareness",
+    name: "Problem-solving",
     category: "Engineering",
-    level: 82,
-    proof: "Interfaces designed for clarity, hierarchy, and faster task completion.",
+    level: 84,
+    proof: "Analytical thinking applied to capstone and personal full-stack work.",
   },
 ];
 
@@ -215,29 +216,36 @@ export const projects: Project[] = [
   {
     id: "camilos-catering-saas",
     title: "Camilo's Catering SaaS Platform",
-    label: "Multi-tenant catering operations platform",
+    label: "Personal full-stack development project · 2026",
     summary:
-      "A full-stack SaaS platform designed to help a catering business manage customer-facing workflows, authenticated access, and organized operational data from a modern dashboard experience.",
+      "A multi-tenant catering management web application with a modern user interface and organized digital workflows for staff and operators.",
     impact:
-      "Positions a local service business like a scalable digital product: cleaner workflows, authenticated roles, responsive access, and a foundation for tenant-aware growth.",
-    stack: ["React.js", "Node.js", "MongoDB", "REST APIs", "Authentication", "Responsive UI"],
+      "Positions a local catering business like a scalable digital product: cleaner workflows, authenticated roles, responsive access, and a foundation for tenant-aware growth.",
+    stack: [
+      "JavaScript",
+      "React.js",
+      "Node.js",
+      "MongoDB",
+      "GitHub",
+      "AI-Assisted Development Tools",
+    ],
     features: [
-      "Tenant-aware account structure",
+      "Multi-tenant account structure",
       "Authentication and protected workflows",
-      "Dashboard-oriented management UI",
+      "Modern dashboard-style management UI",
       "Customer and order data organization",
-      "Responsive views for admin and staff usage",
-      "Debugging and optimization across full-stack flows",
+      "Responsive layouts for admin and staff usage",
+      "Structured debugging, testing, and optimization",
     ],
     challenges: [
       "Separated business logic from interface concerns so the app could scale beyond a single static website.",
-      "Built authenticated workflows that protect operational pages without making the user experience feel heavy.",
+      "Built authenticated workflows that protect operational pages without making the UX feel heavy.",
       "Designed dashboard sections around fast scanning, status clarity, and repeat staff usage.",
     ],
     process: [
       "Mapped core catering workflows and user roles",
       "Modeled data around customers, services, and tenant context",
-      "Implemented React UI with connected backend routes",
+      "Implemented a React UI connected to backend routes",
       "Validated responsive behavior and fixed full-stack issues",
     ],
     architecture: [
@@ -251,36 +259,42 @@ export const projects: Project[] = [
       "Focused on organized state, reusable components, and lean dashboard screens so frequent actions stay quick on everyday devices.",
     githubUrl: "https://github.com/jumaoasjoshua322-maker/camilocatering",
     demoUrl:
-      "mailto:jumaoas.joshuaa@gmail.com?subject=Camilo's%20Catering%20SaaS%20demo%20request",
+      "mailto:joshua.jumaoas@gmail.com?subject=Camilo's%20Catering%20SaaS%20demo%20request",
     accent: "teal",
   },
   {
     id: "ariat-na-tourist-guide",
     title: "ARIAT-Na Smart Tourist Guide & Fare Estimation System",
-    label: "Smart tourism, fare estimation, and route guidance",
+    label: "Capstone / thesis project · 2025–2026",
     summary:
-      "A smart tourism platform that supports route guidance, fare estimation, QR code workflows, and kiosk plus mobile access for visitors navigating local destinations.",
+      "A smart tourist assistance system providing fare estimation, route guidance, and itinerary planning for Cebu Province, with kiosk and mobile-friendly access.",
     impact:
-      "Turns tourism assistance into a practical self-service system, helping visitors make faster movement decisions while supporting real-world validation and accessibility.",
-    stack: ["React.js", "JavaScript", "REST APIs", "QR workflows", "System testing", "Responsive design"],
+      "Turns tourism assistance into a practical self-service system that helps visitors make faster movement decisions, with workflows validated against real user scenarios.",
+    stack: [
+      "JavaScript",
+      "HTML/CSS",
+      "QR Code Integration",
+      "Responsive Interface Design",
+      "GitHub",
+    ],
     features: [
-      "Tourist route guidance",
-      "Fare estimation workflows",
-      "QR code integration",
-      "Kiosk and mobile interface support",
-      "Destination-oriented content structure",
-      "Workflow validation and usability testing",
+      "Fare estimation for Cebu Province trips",
+      "Route guidance for tourist destinations",
+      "Itinerary planning workflows",
+      "QR code integration for physical-to-digital touchpoints",
+      "Kiosk and mobile-accessible interfaces",
+      "System testing and workflow validation",
     ],
     challenges: [
-      "Balanced kiosk readability with mobile density so the same system could work in different tourism contexts.",
-      "Validated fare and route flows around real user decisions instead of treating them as static information pages.",
+      "Balanced kiosk readability with mobile density so the same system worked across very different contexts.",
+      "Validated fare and route flows around real visitor decisions instead of treating them as static information pages.",
       "Designed QR interactions to reduce friction for tourists moving between physical and digital touchpoints.",
     ],
     process: [
       "Identified visitor scenarios and tourism guidance needs",
-      "Designed route, fare, and QR flows for quick access",
+      "Designed route, fare, and itinerary flows for quick access",
       "Built responsive interfaces for kiosk and phone usage",
-      "Tested workflows for clarity, correctness, and practical usability",
+      "Tested workflows for accuracy, clarity, and reliability",
     ],
     architecture: [
       "Responsive web client",
@@ -293,42 +307,58 @@ export const projects: Project[] = [
       "Prioritized fast-loading screens, clear touch targets, and direct route information for users who may be on unstable mobile connections.",
     githubUrl: "https://github.com/Shaloh69/ARIAT-Na",
     demoUrl:
-      "mailto:jumaoas.joshuaa@gmail.com?subject=ARIAT-Na%20demo%20request",
+      "mailto:joshua.jumaoas@gmail.com?subject=ARIAT-Na%20demo%20request",
     accent: "amber",
   },
 ];
 
 export const experience = [
   {
-    period: "Academic and capstone development",
-    title: "Full-stack system implementation",
+    period: "2026 · Personal full-stack project",
+    title: "Camilo's Catering SaaS — full-stack implementation",
     description:
-      "Planned, built, debugged, and refined software systems that combine frontend interfaces, backend workflows, database records, and user-facing validation.",
-    points: ["Requirements mapping", "React implementation", "Backend workflow integration", "Testing and optimization"],
+      "Developed a multi-tenant catering management web application with modern UI, organized digital workflows, authentication, database integration, and responsive layouts.",
+    points: [
+      "Frontend + backend integration",
+      "Authentication and tenant context",
+      "Database integration",
+      "Debugging, testing, and optimization",
+    ],
   },
   {
-    period: "Team collaboration",
-    title: "Software collaboration and organized delivery",
+    period: "2025–2026 · Capstone / thesis",
+    title: "ARIAT-Na — smart tourism collaboration",
     description:
-      "Worked through project tasks using structured communication, Git/GitHub collaboration, issue tracing, and practical implementation planning.",
-    points: ["Git-based workflow", "Debugging sessions", "Feature iteration", "Documentation habits"],
+      "Contributed to a smart tourist assistance system for Cebu Province with fare estimation, route guidance, and itinerary planning. Helped design kiosk and mobile interfaces and participated in system testing and workflow validation.",
+    points: [
+      "Fare and route workflows",
+      "QR code integration",
+      "Kiosk and mobile UX",
+      "System testing and validation",
+    ],
   },
   {
     period: "Modern development workflow",
     title: "AI-assisted engineering with human judgment",
     description:
-      "Uses AI tools to accelerate learning, inspect errors, plan implementation options, and refine code while staying accountable for final decisions.",
-    points: ["Prompted research", "Code review support", "Error analysis", "Faster iteration loops"],
+      "Uses ChatGPT, Claude Code, and GitHub Copilot to accelerate learning, inspect errors, plan implementation options, and refine code while staying accountable for final decisions.",
+    points: [
+      "Prompted research",
+      "Code review support",
+      "Error analysis",
+      "Faster iteration loops",
+    ],
   },
 ];
 
 export const resumeHighlights = {
   summary:
-    "Computer Engineering student with full-stack development experience across web-based systems, responsive UI design, REST-style workflows, database integration, debugging, and AI-assisted development.",
+    "Computer Engineering student with experience in full-stack development, web-based systems, and software project collaboration. Familiar with front-end development, database integration, AI-assisted workflows, debugging, and responsive interface design. Passionate about building practical systems and continuously improving technical skills through academic and personal projects.",
   education: [
-    "BS Computer Engineering",
+    "Bachelor of Science in Computer Engineering",
     "University of Cebu Lapu-Lapu and Mandaue",
-    "Cebu, Philippines",
+    "Mandaue City, Cebu, Philippines",
+    "Expected Graduation: June 16, 2026",
   ],
   certifications: [
     "Certifications placeholder: add cloud, web development, or database credentials as completed.",
