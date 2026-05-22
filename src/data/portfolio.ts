@@ -1,14 +1,8 @@
-export type SkillCategory =
-  | "Frontend"
-  | "Backend"
-  | "Database"
-  | "Tools"
-  | "Engineering";
+export type SkillCategory = "Frontend" | "Backend" | "Tools";
 
 export type Skill = {
   name: string;
   category: SkillCategory;
-  level: number;
   proof: string;
 };
 
@@ -132,100 +126,49 @@ export const achievements = [
 
 export const skills: Skill[] = [
   {
-    name: "HTML",
+    name: "HTML & CSS",
     category: "Frontend",
-    level: 92,
-    proof: "Semantic layouts, accessible sections, and structured resume content.",
-  },
-  {
-    name: "CSS",
-    category: "Frontend",
-    level: 88,
-    proof: "Responsive layouts, polished UI systems, and component-level styling.",
+    proof: "Semantic, accessible layouts and responsive component-level styling.",
   },
   {
     name: "JavaScript",
     category: "Frontend",
-    level: 84,
     proof: "Interactive interfaces, form behavior, and client-side workflows.",
   },
   {
     name: "React.js",
     category: "Frontend",
-    level: 78,
-    proof: "Component-driven dashboards, responsive views, and reusable UI logic.",
+    proof: "Component-driven dashboards and reusable UI shipped in real projects.",
   },
   {
     name: "Node.js",
     category: "Backend",
-    level: 74,
     proof: "Backend routes, API workflows, and full-stack integration in catering SaaS.",
   },
   {
     name: "REST APIs",
     category: "Backend",
-    level: 74,
     proof: "Structured client-server communication and data-driven features.",
   },
   {
     name: "MongoDB",
-    category: "Database",
-    level: 72,
+    category: "Backend",
     proof: "Document data modeling for the multi-tenant catering platform.",
-  },
-  {
-    name: "Database integration",
-    category: "Database",
-    level: 76,
-    proof: "Connecting frontend flows to persistent records and admin-ready data.",
   },
   {
     name: "Git & GitHub",
     category: "Tools",
-    level: 84,
-    proof: "Version control, repository organization, and collaboration on shared projects.",
+    proof: "Version control, repository organization, and shared-project collaboration.",
   },
   {
-    name: "VS Code",
+    name: "AI-assisted workflow",
     category: "Tools",
-    level: 88,
-    proof: "Daily development environment for frontend and full-stack work.",
+    proof: "ChatGPT, Claude Code, and Copilot for research, debugging, and iteration.",
   },
   {
-    name: "AI-assisted tools",
+    name: "Responsive UI",
     category: "Tools",
-    level: 86,
-    proof: "ChatGPT, Claude Code, and GitHub Copilot for research, debugging, and iteration.",
-  },
-  {
-    name: "QR & responsive UI",
-    category: "Engineering",
-    level: 82,
-    proof: "QR-based touchpoints and kiosk/mobile layouts shipped in ARIAT-Na.",
-  },
-  {
-    name: "Responsive design",
-    category: "Engineering",
-    level: 86,
-    proof: "Mobile, kiosk, tablet, and desktop layouts built around real usage contexts.",
-  },
-  {
-    name: "Debugging",
-    category: "Engineering",
-    level: 82,
-    proof: "Systematic issue tracing across UI, API, and data layers.",
-  },
-  {
-    name: "System testing",
-    category: "Engineering",
-    level: 78,
-    proof: "Workflow validation, responsive checks, and user-scenario testing.",
-  },
-  {
-    name: "Problem-solving",
-    category: "Engineering",
-    level: 84,
-    proof: "Analytical thinking applied to capstone and personal full-stack work.",
+    proof: "Kiosk and mobile layouts validated against real-world usage contexts.",
   },
 ];
 
