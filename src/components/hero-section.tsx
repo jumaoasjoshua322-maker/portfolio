@@ -57,7 +57,7 @@ export function HeroSection() {
               users.
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-zinc-300 sm:text-xl">
-              {profile.headline} {profile.shortIntro}
+              {profile.headline}
             </p>
           </motion.div>
 

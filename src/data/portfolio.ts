@@ -54,9 +54,7 @@ export const profile = {
   role: "Computer Engineering Student | Aspiring Software Engineer",
   location: "Mandaue City, Cebu, Philippines",
   headline:
-    "Building modern web systems with clean design and practical engineering.",
-  shortIntro:
-    "I design and build responsive, database-connected web systems that turn academic and real-world workflows into usable products.",
+    "Based in Cebu, Philippines · Finishing Computer Engineering in June 2026.",
   availability: "Available for junior roles and freelance builds",
   email: "joshua.jumaoas@gmail.com", 
   phone: "+63 967-093-7612",
