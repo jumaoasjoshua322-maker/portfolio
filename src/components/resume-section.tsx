@@ -1,7 +1,6 @@
 import {
   BriefcaseBusiness,
   CheckCircle2,
-  Download,
   FileText,
   GraduationCap,
 } from "lucide-react";
@@ -9,7 +8,6 @@ import type { ReactNode } from "react";
 
 import { Reveal } from "@/components/reveal";
 import { SectionHeading } from "@/components/section-heading";
-import { Button } from "@/components/ui/button";
 import { profile, projects, resumeHighlights, skills } from "@/data/portfolio";
 
 export function ResumeSection() {
@@ -48,13 +46,7 @@ export function ResumeSection() {
               Built for recruiter scanning: role fit, tools, education, projects,
               and evidence of practical engineering all appear above the fold.
             </p>
-            <Button asChild className="mt-6 w-full">
-              <a href={profile.resumePath} download>
-                <Download className="h-4 w-4" />
-                Download ATS Resume
-              </a>
-            </Button>
-            <div className="mt-5 grid gap-3 text-sm text-zinc-300">
+            <div className="mt-6 grid gap-3 text-sm text-zinc-300">
               {[
                 "Junior developer roles",
                 "Associate software engineer openings",
