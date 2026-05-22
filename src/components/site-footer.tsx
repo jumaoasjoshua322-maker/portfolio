@@ -10,8 +10,8 @@ export function SiteFooter() {
       <div className="mx-auto flex w-full max-w-7xl flex-col gap-5 px-4 py-8 sm:px-6 md:flex-row md:items-center md:justify-between lg:px-8">
         <div>
           <p className="font-semibold text-white">Joshua Jumao-as</p>
-          <p className="mt-1 text-sm text-zinc-500">
-            Full-stack developer portfolio for modern web systems.
+          <p className="mt-1 text-sm font-medium uppercase tracking-wide text-zinc-500">
+            Aspiring Software Engineer
           </p>
         </div>
         <div className="flex items-center gap-2">
