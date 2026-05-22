@@ -141,7 +141,7 @@ function ProjectCaseStudy({
           </div>
         </div>
 
-        <div className="relative grid gap-4 border-t border-white/10 p-4 sm:grid-cols-2 sm:p-6 lg:grid-cols-4 lg:p-8">
+        <div className="relative grid gap-4 border-t border-white/10 p-4 sm:grid-cols-2 sm:p-6 xl:grid-cols-4 lg:p-8">
           <CaseStudyColumn
             icon={<CheckCircle2 className="h-4 w-4" />}
             title="Core Features"
