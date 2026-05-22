@@ -63,6 +63,7 @@ export const profile = {
   github: "https://github.com/jumaoasjoshua322-maker",
   linkedin: "https://www.linkedin.com/in/joshua-jumao-as-492772251/",
   resumePath: "/Joshua-Jumao-as-Resume.pdf",
+  portraitPath: "/joshua-portrait.png",
 };
 
 export const heroStack = [

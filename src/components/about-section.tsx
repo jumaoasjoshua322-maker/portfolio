@@ -5,6 +5,7 @@ import {
   Sparkles,
   Trophy,
 } from "lucide-react";
+import Image from "next/image";
 
 import { Reveal } from "@/components/reveal";
 import { SectionHeading } from "@/components/section-heading";
@@ -36,8 +37,20 @@ export function AboutSection() {
       <div className="grid gap-5 lg:grid-cols-[0.95fr_1.05fr]">
         <Reveal className="space-y-5">
           <Card>
-            <CardHeader>
-              <CardTitle>Personal Story</CardTitle>
+            <CardHeader className="flex flex-row items-center gap-4 space-y-0">
+              <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-full border border-white/15 bg-white/5 shadow-[0_8px_24px_rgba(0,0,0,0.35)]">
+                <Image
+                  src={profile.portraitPath}
+                  alt={`Portrait of ${profile.name}`}
+                  fill
+                  sizes="64px"
+                  className="object-cover"
+                />
+              </div>
+              <div className="space-y-1">
+                <CardTitle>Personal Story</CardTitle>
+                <p className="text-xs text-zinc-500">{profile.name}</p>
+              </div>
             </CardHeader>
             <CardContent className="space-y-4 text-sm leading-7 text-zinc-300 sm:text-base">
               <p>
