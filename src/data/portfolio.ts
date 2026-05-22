@@ -42,9 +42,7 @@ export const profile = {
   phone: "+63 967-093-7612",
   github: "https://github.com/jumaoasjoshua322-maker",
   linkedin: "https://www.linkedin.com/in/joshua-jumao-as-492772251/",
-  // Drop a real PDF named `Joshua-Jumao-as-Resume.pdf` into /public,
-  // then change this path to `/Joshua-Jumao-as-Resume.pdf`.
-  resumePath: "/Joshua-Jumao-as-Resume.txt",
+  resumePath: "/Joshua-Jumao-as-Resume.pdf",
 };
 
 export const heroStack = [
