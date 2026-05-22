@@ -67,30 +67,6 @@ export const heroStack = [
   "AI-assisted",
 ];
 
-export const brandSignals = [
-  "Full-stack workflows",
-  "SaaS thinking",
-  "Responsive UI",
-  "Database integration",
-  "AI-assisted delivery",
-  "Debugging mindset",
-];
-
-export const heroMetrics = [
-  {
-    value: "Full-stack",
-    label: "End-to-end web systems",
-  },
-  {
-    value: "2",
-    label: "Case-study projects",
-  },
-  {
-    value: "Jun 2026",
-    label: "Expected graduation",
-  },
-];
-
 export const aboutTimeline = [
   {
     year: "Jun 2026",

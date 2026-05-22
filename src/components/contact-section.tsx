@@ -96,7 +96,7 @@ export function ContactSection() {
           headingId="contact-heading"
           eyebrow="Contact"
           title="Open to teams and clients who need a sharp, fast-learning builder."
-          description="Reach out for internships, OJT evaluations, junior software roles, associate engineering openings, startup product work, or freelance full-stack systems."
+          description="Reach out for junior software roles, associate engineering openings and freelance full-stack systems."
           icon={<MessageSquare className="h-3.5 w-3.5" />}
           align="center"
         />
@@ -113,7 +113,7 @@ export function ContactSection() {
                 <div>
                   <p className="font-semibold text-white">Open to opportunities</p>
                   <p className="mt-2 text-sm leading-6 text-emerald-50/78">
-                    Joshua is positioned for internship, OJT, junior developer,
+                    Open to junior developer,
                     associate software engineer, and freelance full-stack roles.
                   </p>
                 </div>
