@@ -11,6 +11,7 @@ import {
   ShieldCheck,
   Smartphone,
 } from "lucide-react";
+import Image from "next/image";
 import type { ReactNode } from "react";
 
 import { Reveal } from "@/components/reveal";
@@ -214,6 +215,68 @@ function CaseStudyColumn({
 }
 
 function ProjectMockup({ project }: { project: Project }) {
+  if (project.screenshots) {
+    return <ProjectScreenshots project={project} />;
+  }
+  return <ProjectStylizedMockup project={project} />;
+}
+
+function ProjectScreenshots({ project }: { project: Project }) {
+  const accent = accentStyles[project.accent];
+  const { desktop, mobile, chromeLabel } = project.screenshots!;
+
+  return (
+    <div className="relative min-h-[420px] overflow-hidden rounded-lg border border-white/12 bg-[#090c11] p-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] sm:p-4">
+      <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.06),transparent_35%,rgba(255,255,255,0.03))]" />
+      <div className="relative overflow-hidden rounded-lg border border-white/10 bg-[#0f141b]">
+        <div className="flex items-center justify-between border-b border-white/10 px-4 py-3">
+          <div className="flex items-center gap-2">
+            <span className="h-2.5 w-2.5 rounded-full bg-rose-300" />
+            <span className="h-2.5 w-2.5 rounded-full bg-amber-300" />
+            <span className="h-2.5 w-2.5 rounded-full bg-emerald-300" />
+          </div>
+          <span className="font-mono text-xs text-zinc-500">{chromeLabel}</span>
+        </div>
+        <div className="relative aspect-[16/10] w-full bg-black">
+          <Image
+            src={desktop.src}
+            alt={desktop.alt}
+            fill
+            sizes="(min-width: 1024px) 50vw, 100vw"
+            className="object-cover object-top"
+            priority={false}
+          />
+        </div>
+      </div>
+
+      <div className="relative mt-4 grid gap-3 sm:grid-cols-[0.62fr_0.38fr]">
+        <div className="rounded-lg border border-white/10 bg-white/4.5 p-4">
+          <div className="mb-3 flex items-center justify-between">
+            <p className="text-sm font-medium text-white">Mobile experience</p>
+            <Smartphone className={cn("h-4 w-4", accent.text)} />
+          </div>
+          <p className="text-xs leading-5 text-zinc-500">
+            Real screenshot from the deployed app — same UI, sized for a phone.
+          </p>
+        </div>
+        <div className="overflow-hidden rounded-lg border border-white/10 bg-black">
+          <div className="relative aspect-[1170/2379] w-full">
+            <Image
+              src={mobile.src}
+              alt={mobile.alt}
+              fill
+              sizes="(min-width: 640px) 220px, 40vw"
+              className="object-cover object-top"
+              priority={false}
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function ProjectStylizedMockup({ project }: { project: Project }) {
   const isSaas = project.accent === "teal";
   const accent = accentStyles[project.accent];
 

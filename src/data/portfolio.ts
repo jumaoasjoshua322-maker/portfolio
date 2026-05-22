@@ -12,6 +12,14 @@ export type Skill = {
   proof: string;
 };
 
+export type ProjectScreenshot = {
+  src: string;
+  alt: string;
+  /** Width and height in pixels of the source image, for next/image. */
+  width: number;
+  height: number;
+};
+
 export type Project = {
   id: string;
   title: string;
@@ -27,6 +35,15 @@ export type Project = {
   githubUrl: string;
   demoUrl: string;
   accent: "teal" | "amber";
+  /**
+   * Real product screenshots. When present, the project card renders
+   * these instead of the stylized fallback mockup.
+   */
+  screenshots?: {
+    desktop: ProjectScreenshot;
+    mobile: ProjectScreenshot;
+    chromeLabel: string;
+  };
 };
 
 export const profile = {
@@ -306,6 +323,21 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/Shaloh69/ARIAT-Na",
     demoUrl: "https://ariat-na.onrender.com/",
     accent: "amber",
+    screenshots: {
+      chromeLabel: "ariat-na.onrender.com",
+      desktop: {
+        src: "/projects/ariat-na/desktop-hero.png",
+        alt: "ARIAT-Na desktop home with Cebu region cards and featured destinations.",
+        width: 2880,
+        height: 1800,
+      },
+      mobile: {
+        src: "/projects/ariat-na/mobile.png",
+        alt: "ARIAT-Na mobile home view showing region cards on a phone-sized layout.",
+        width: 1170,
+        height: 2379,
+      },
+    },
   },
 ];
 
