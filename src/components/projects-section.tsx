@@ -6,8 +6,6 @@ import {
   Layers3,
   MonitorSmartphone,
   Network,
-  QrCode,
-  Route,
   ShieldCheck,
   Smartphone,
 } from "lucide-react";
@@ -24,15 +22,6 @@ import { cn } from "@/lib/utils";
 
 const accentStyles = {
   teal: {
-    badge: "cyan" as const,
-    glow: "from-cyan-300/18 via-cyan-300/8 to-transparent",
-    border: "border-cyan-300/20",
-    text: "text-cyan-100",
-    bar: "bg-[linear-gradient(90deg,#22d3ee,#67e8f9,#a5f3fc)]",
-  },
-  amber: {
-    // Aliased to the cyan accent so the brand stays single-accent.
-    // The data layer still tags projects "amber" semantically.
     badge: "cyan" as const,
     glow: "from-cyan-300/18 via-cyan-300/8 to-transparent",
     border: "border-cyan-300/20",
@@ -293,7 +282,6 @@ function BrowserFrame({
 }
 
 function ProjectStylizedMockup({ project }: { project: Project }) {
-  const isSaas = project.accent === "teal";
   const accent = accentStyles[project.accent];
 
   return (
@@ -306,12 +294,10 @@ function ProjectStylizedMockup({ project }: { project: Project }) {
             <span className="h-2.5 w-2.5 rounded-full bg-amber-300" />
             <span className="h-2.5 w-2.5 rounded-full bg-emerald-300" />
           </div>
-          <span className="font-mono text-xs text-zinc-500">
-            {isSaas ? "tenant.dashboard" : "tourist.guide"}
-          </span>
+          <span className="font-mono text-xs text-zinc-500">tenant.dashboard</span>
         </div>
 
-        {isSaas ? <SaasDashboard accentBar={accent.bar} /> : <TourismDashboard accentBar={accent.bar} />}
+        <SaasDashboard accentBar={accent.bar} />
       </div>
 
       <div className="relative mt-4 grid gap-3 sm:grid-cols-[0.72fr_0.28fr]">
@@ -345,9 +331,7 @@ function ProjectStylizedMockup({ project }: { project: Project }) {
         <div className="rounded-lg border border-white/10 bg-white/4.5 p-4">
           <p className="text-sm font-medium text-white">UI showcase</p>
           <p className="mt-2 text-xs leading-5 text-zinc-500">
-            {isSaas
-              ? "Dashboard density, auth states, and staff-friendly controls."
-              : "Kiosk clarity, mobile touch targets, and route-first decisions."}
+            Dashboard density, auth states, and staff-friendly controls.
           </p>
         </div>
       </div>
@@ -401,60 +385,6 @@ function SaasDashboard({ accentBar }: { accentBar: string }) {
           </div>
         </div>
       </main>
-    </div>
-  );
-}
-
-function TourismDashboard({ accentBar }: { accentBar: string }) {
-  return (
-    <div className="grid gap-4 p-4 lg:grid-cols-[0.58fr_0.42fr]">
-      <div className="rounded-lg border border-white/10 bg-black/24 p-4">
-        <div className="mb-4 flex items-center justify-between">
-          <p className="text-sm font-medium text-white">Route guidance</p>
-          <Route className="h-4 w-4 text-amber-100" />
-        </div>
-        <div className="relative h-56 rounded-lg border border-white/10 bg-[#111820] p-4">
-          <div className="absolute left-8 top-9 h-32 w-[72%] border-l-2 border-t-2 border-dashed border-amber-200/45" />
-          <div className="absolute left-8 top-9 h-4 w-4 rounded-full bg-cyan-200 shadow-[0_0_18px_rgba(103,232,249,0.6)]" />
-          <div className="absolute right-10 top-36 h-5 w-5 rounded-md bg-amber-200 shadow-[0_0_18px_rgba(252,211,77,0.55)]" />
-          <div className="absolute bottom-5 left-5 right-5 grid grid-cols-3 gap-2">
-            {["Start", "Fare", "Route"].map((item) => (
-              <span
-                key={item}
-                className="rounded-md border border-white/10 bg-white/6 px-2 py-2 text-center text-xs text-zinc-300"
-              >
-                {item}
-              </span>
-            ))}
-          </div>
-        </div>
-      </div>
-      <div className="space-y-4">
-        <div className="rounded-lg border border-white/10 bg-white/4.5 p-4">
-          <div className="mb-3 flex items-center gap-2">
-            <QrCode className="h-4 w-4 text-cyan-100" />
-            <p className="text-sm font-medium text-white">QR workflow</p>
-          </div>
-          <div className="grid h-24 grid-cols-5 gap-1 rounded-lg border border-white/10 bg-black/24 p-2">
-            {Array.from({ length: 25 }).map((_, index) => (
-              <span
-                key={index}
-                className={cn(
-                  "rounded-[2px]",
-                  index % 3 === 0 || index % 7 === 0 ? accentBar : "bg-white/8",
-                )}
-              />
-            ))}
-          </div>
-        </div>
-        <div className="rounded-lg border border-white/10 bg-white/4.5 p-4">
-          <p className="text-sm font-medium text-white">Fare estimate</p>
-          <p className="mt-2 text-3xl font-semibold text-white">₱42</p>
-          <div className="mt-4 h-2 overflow-hidden rounded-md bg-white/8">
-            <div className={cn("h-full w-3/4 rounded-md", accentBar)} />
-          </div>
-        </div>
-      </div>
     </div>
   );
 }

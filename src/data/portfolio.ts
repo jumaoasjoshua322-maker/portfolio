@@ -28,7 +28,7 @@ export type Project = {
   performance: string;
   githubUrl: string;
   demoUrl: string;
-  accent: "teal" | "amber";
+  accent: "teal";
   /**
    * Real product screenshots. When present, the project card renders
    * these instead of the stylized fallback mockup.
@@ -50,7 +50,7 @@ export const profile = {
   headline:
     "Based in Cebu, Philippines · Finishing Computer Engineering in June 2026.",
   availability: "Available for junior roles and freelance builds",
-  email: "joshua.jumaoas@gmail.com", 
+  email: "jumaoas.joshuaa@gmail.com",
   phone: "+63 967-093-7612",
   github: "https://github.com/jumaoasjoshua322-maker",
   linkedin: "https://www.linkedin.com/in/joshua-jumao-as-492772251/",
@@ -219,7 +219,7 @@ export const projects: Project[] = [
       "Focused on organized state, reusable components, and lean dashboard screens so frequent actions stay quick on everyday devices.",
     githubUrl: "https://github.com/jumaoasjoshua322-maker/camilocatering",
     demoUrl:
-      "mailto:joshua.jumaoas@gmail.com?subject=Camilo's%20Catering%20SaaS%20demo%20request",
+      "mailto:jumaoas.joshuaa@gmail.com?subject=Camilo's%20Catering%20SaaS%20demo%20request",
     accent: "teal",
   },
   {
@@ -267,7 +267,7 @@ export const projects: Project[] = [
       "Prioritized fast-loading screens, clear touch targets, and direct route information for users who may be on unstable mobile connections.",
     githubUrl: "https://github.com/Shaloh69/ARIAT-Na",
     demoUrl: "https://ariat-na.onrender.com/",
-    accent: "amber",
+    accent: "teal",
     screenshots: {
       chromeLabel: "ariat-na.onrender.com",
       hero: {
