@@ -20,7 +20,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { profile } from "@/data/portfolio";
 
 const opportunityTypes = [
-  "Internship / OJT",
   "Junior developer role",
   "Associate software engineer role",
   "Freelance full-stack project",
@@ -95,7 +94,7 @@ export function ContactSection() {
         <SectionHeading
           headingId="contact-heading"
           eyebrow="Contact"
-          title="Open to teams and clients who need a sharp, fast-learning builder."
+          title="Always learning, always building."
           description="Reach out for junior software roles, associate engineering openings and freelance full-stack systems."
           icon={<MessageSquare className="h-3.5 w-3.5" />}
           align="center"

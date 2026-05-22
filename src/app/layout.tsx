@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     "Node.js developer",
     "SaaS portfolio",
     "Junior software engineer",
-    "OJT developer Philippines",
+    "Associate software engineer Philippines",
   ],
   authors: [{ name: "Joshua Jumao-as" }],
   creator: "Joshua Jumao-as",

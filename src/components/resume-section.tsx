@@ -58,7 +58,6 @@ export function ResumeSection() {
               {[
                 "Junior developer roles",
                 "Associate software engineer openings",
-                "Internship and OJT opportunities",
                 "Freelance full-stack projects",
               ].map((item) => (
                 <div key={item} className="flex items-center gap-2">
