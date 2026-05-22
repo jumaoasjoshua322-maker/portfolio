@@ -304,8 +304,7 @@ export const projects: Project[] = [
     performance:
       "Prioritized fast-loading screens, clear touch targets, and direct route information for users who may be on unstable mobile connections.",
     githubUrl: "https://github.com/Shaloh69/ARIAT-Na",
-    demoUrl:
-      "mailto:joshua.jumaoas@gmail.com?subject=ARIAT-Na%20demo%20request",
+    demoUrl: "https://ariat-na.onrender.com/",
     accent: "amber",
   },
 ];

@@ -126,12 +126,25 @@ function ProjectCaseStudy({
                   <ArrowUpRight className="h-4 w-4" />
                 </a>
               </Button>
-              <Button asChild>
-                <a href={project.demoUrl}>
-                  <ExternalLink className="h-4 w-4" />
-                  Request Demo
-                </a>
-              </Button>
+              {(() => {
+                const isLiveDemo = /^https?:\/\//i.test(project.demoUrl);
+                return (
+                  <Button asChild>
+                    <a
+                      href={project.demoUrl}
+                      {...(isLiveDemo
+                        ? { target: "_blank", rel: "noreferrer" }
+                        : {})}
+                    >
+                      <ExternalLink className="h-4 w-4" />
+                      {isLiveDemo ? "Live Demo" : "Request Demo"}
+                      {isLiveDemo ? (
+                        <ArrowUpRight className="h-4 w-4" />
+                      ) : null}
+                    </a>
+                  </Button>
+                );
+              })()}
             </div>
           </div>
         </div>
