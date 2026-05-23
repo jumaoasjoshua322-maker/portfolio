@@ -26,8 +26,8 @@ export function ResumeSection() {
         <SectionHeading
           headingId="resume-heading"
           eyebrow="Resume"
-          title="ATS-friendly story, polished for human readers."
-          description="The resume section mirrors the portfolio: concise professional summary, education, skill groups, standout projects, and a placeholder area for future certifications."
+          title="ATS-ready resume, written for humans first."
+          description="Summary, education, skills, and projects — formatted to scan in 30 seconds and parse cleanly through any applicant tracking system."
           icon={<FileText className="h-3.5 w-3.5" />}
           align="center"
         />
@@ -40,11 +40,11 @@ export function ResumeSection() {
               <FileText className="h-6 w-6" />
             </div>
             <h3 className="mt-5 text-2xl font-semibold text-white">
-              Resume Snapshot
+              Resume
             </h3>
             <p className="mt-3 text-sm leading-6 text-zinc-400">
-              Built for recruiter scanning: role fit, tools, education, projects,
-              and evidence of practical engineering all appear above the fold.
+              Everything a recruiter needs in 30 seconds: role fit, stack,
+              education, and shipped projects, above the fold.
             </p>
             <div className="mt-6 grid gap-3 text-sm text-zinc-300">
               {[

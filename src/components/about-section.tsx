@@ -18,8 +18,8 @@ export function AboutSection() {
         <SectionHeading
           headingId="about-heading"
           eyebrow="About"
-          title="A Cebu-based builder with an engineering brain and product taste."
-          description="My portfolio story is strongest when framed around practical systems: responsive interfaces, database-backed workflows, debugging discipline, and the ability to learn fast with modern tools."
+          title="Computer Engineering student in Cebu, building real web systems."
+          description="Responsive interfaces, database-connected workflows, and a habit of debugging until things actually work on real devices."
           icon={<BrainCircuit className="h-3.5 w-3.5" />}
         />
       </Reveal>

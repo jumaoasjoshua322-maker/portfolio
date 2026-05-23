@@ -17,8 +17,8 @@ export function ExperienceSection() {
         <SectionHeading
           headingId="experience-heading"
           eyebrow="Experience and Training"
-          title="Academic work framed as professional development practice."
-          description="My experience is strongest when presented as applied software delivery: collaboration, capstone development, debugging, testing, research, and iterative implementation."
+          title="Where I've put the work in."
+          description="Capstone development, full-stack project work, and a workflow built around shipping, not just submitting."
           icon={<Bug className="h-3.5 w-3.5" />}
         />
       </Reveal>

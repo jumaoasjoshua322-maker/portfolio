@@ -41,8 +41,8 @@ export function ProjectsSection() {
         <SectionHeading
           headingId="projects-heading"
           eyebrow="Featured Projects"
-          title="Case studies that show real product-building capability."
-          description="These projects are positioned as evidence of system thinking: multi-layer architecture, responsive UI, debugging, workflow validation, and the discipline to turn requirements into usable software."
+          title="Selected projects."
+          description="Two end-to-end builds: a multi-tenant catering SaaS and a smart tourism capstone shipped for Cebu Province."
           icon={<Layers3 className="h-3.5 w-3.5" />}
           align="center"
         />

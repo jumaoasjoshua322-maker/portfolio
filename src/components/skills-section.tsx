@@ -56,8 +56,8 @@ export function SkillsSection() {
         <SectionHeading
           headingId="skills-heading"
           eyebrow="Technical Skills"
-          title="A focused stack for modern web systems."
-          description="Tools and practices I lean on across real, shipped projects — not a checklist."
+          title="The stack I work in."
+          description="Tools I use day-to-day, with proof from shipped projects."
           icon={<Code2 className="h-3.5 w-3.5" />}
           align="center"
         />
