@@ -44,15 +44,14 @@ export function HeroSection() {
             animate={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
             transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1], delay: 0.05 }}
           >
-            <p className="mb-3 text-sm font-medium uppercase tracking-wide text-cyan-200/90">
-              {profile.role}
-            </p>
             <h1
               id="hero-heading"
               className="max-w-4xl text-balance text-5xl font-semibold leading-[1.05] tracking-tight text-white sm:text-6xl"
             >
-              I build web systems that feel sharp, useful, and ready for real
-              users.
+              I design and build full-stack web systems with{" "}
+              <span className="text-cyan-300">React</span>,{" "}
+              <span className="text-cyan-300">Node</span>, and{" "}
+              <span className="text-cyan-300">MongoDB</span>.
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-7 text-zinc-400 sm:text-lg">
               {profile.headline}

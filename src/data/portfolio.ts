@@ -45,11 +45,11 @@ export type Project = {
 
 export const profile = {
   name: "Joshua Jumao-as",
-  role: "Computer Engineering Student | Aspiring Software Engineer",
+  role: "Full-Stack Developer · Cebu, Philippines",
   location: "Mandaue City, Cebu, Philippines",
   headline:
-    "Based in Cebu, Philippines · Finishing Computer Engineering in June 2026.",
-  availability: "Available for junior developer, associate software engineer, and freelance full-stack roles.",
+    "Currently finishing Computer Engineering at the University of Cebu. Open to junior and associate software engineering roles.",
+  availability: "Open to junior and associate software engineering roles",
   email: "jumaoas.joshuaa@gmail.com",
   phone: "+63 967-093-7612",
   github: "https://github.com/jumaoasjoshua322-maker",
