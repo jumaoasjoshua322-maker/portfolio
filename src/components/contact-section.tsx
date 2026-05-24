@@ -85,7 +85,7 @@ export function ContactSection() {
             id="contact-heading"
             className="text-3xl font-semibold leading-tight tracking-tight text-white sm:text-4xl"
           >
-            Let&apos;s build something.
+            Open to opportunities and collaborations.
           </h2>
           <p className="mt-3 text-base leading-7 text-zinc-400 sm:text-lg">
             Open for junior, associate, and freelance work. Replies usually

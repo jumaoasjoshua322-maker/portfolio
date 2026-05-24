@@ -33,7 +33,7 @@ export function ResumeSection() {
               Get my resume.
             </h2>
             <p className="mt-3 text-base leading-7 text-zinc-400 sm:text-lg">
-              One-page, ATS-ready, June 2026 graduate.
+              One-page, June 2026 graduate.
             </p>
           </div>
           <Button asChild size="lg">

@@ -17,8 +17,8 @@ export function SkillsSection() {
             How I work.
           </h2>
           <p className="mt-3 text-base leading-7 text-zinc-400 sm:text-lg">
-            Tools I lean on day-to-day. No checklists, no percentages — just
-            what&apos;s earned a place in the way I ship.
+            These are the tools and technologies I use most often when building
+            projects.
           </p>
 
           <dl className="mt-10 space-y-8 border-l border-white/10 pl-6">

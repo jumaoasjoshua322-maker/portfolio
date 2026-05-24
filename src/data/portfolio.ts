@@ -44,7 +44,7 @@ export const profile = {
   role: "Full-Stack Developer · Cebu, Philippines",
   location: "Mandaue City, Cebu, Philippines",
   headline:
-    "Currently finishing Computer Engineering at the University of Cebu. Open to junior and associate software engineering roles.",
+    "Currently finishing Computer Engineering at the University of Cebu. Looking for opportunities to grow as a software engineer after graduation.",
   availability: "Available — June 2026",
   email: "jumaoas.joshuaa@gmail.com",
   phone: "+63 967-093-7612",
@@ -68,8 +68,8 @@ export const heroStack = [
  * Two paragraphs, no marketing fluff.
  */
 export const aboutBio = [
-  "I'm a Computer Engineering student in Cebu, finishing in June 2026. I build full-stack web systems — the kind that move beyond static pages into real authentication, database-connected workflows, and interfaces that hold up on real devices.",
-  "Most of what I know comes from shipping. I work in React, Node, and MongoDB, lean on Git and AI-assisted tooling for speed, and trust debugging more than tutorials when something breaks.",
+  "I'm a Computer Engineering student in Cebu, finishing in June 2026. I build full-stack web systems — the kind that move beyond static pages into real authentication, database-connected workflows, and interfaces that still work well outside of desktop previews.",
+  "Most of what I know comes from shipping. I work in React, Node, and MongoDB. I use Git daily and rely on AI tools mostly for research, debugging, and reviewing ideas while building.",
 ];
 
 export const aboutTimeline = [
@@ -107,7 +107,7 @@ export const skillsProse = [
   },
   {
     label: "Backend & data",
-    body: "Node.js for API routes, REST for client-server communication, MongoDB for the multi-tenant catering platform. Familiar with the auth + persistence + deploy loop end-to-end.",
+    body: "Node.js for API routes, REST for client-server communication, MongoDB for the multi-tenant catering platform. Comfortable handling authentication, database integration, and deployment across full-stack projects.",
   },
   {
     label: "Workflow",
@@ -174,7 +174,7 @@ export const projects: Project[] = [
     problem:
       "A local Cebu catering business was running operations through messages and spreadsheets — bookings, menus, and customer records scattered across tools. The team needed one place to manage tenants, orders, and staff access without rebuilding from scratch every time the business grew.",
     approach:
-      "I designed and shipped a React dashboard backed by a Node API and MongoDB, with tenant-aware data access, authentication, and a layout built for fast scanning by repeat staff users. The result turns the business into a scalable digital product instead of a static brochure site.",
+      "I designed and shipped a React dashboard backed by a Node API and MongoDB, with tenant-aware data access, authentication, and a layout built for fast scanning by repeat staff users. The system gave the business a more organized way to manage bookings, staff access, and customer data in one place.",
     stack: ["React", "Node.js", "MongoDB", "REST APIs", "Authentication"],
     githubUrl: "https://github.com/jumaoasjoshua322-maker/camilocatering",
     demoUrl: "https://camilocatering.vercel.app/",
@@ -217,9 +217,9 @@ export const projects: Project[] = [
     summary:
       "A smart tourist assistance system with fare estimation, route guidance, and itinerary planning across Cebu Province.",
     problem:
-      "Tourists landing in Cebu had no single source of truth for getting between destinations, estimating fares, or planning a day trip. The information existed across signs, blog posts, and word of mouth — none of it queryable from a phone or kiosk in the moment.",
+      "Tourists in Cebu often had to rely on scattered information from blogs, signages, and social media posts.",
     approach:
-      "I contributed to a responsive React/JavaScript front-end that handles fare estimates, route guidance, and itinerary planning, plus QR code integration so visitors can move between physical signage and the digital app. The system was designed for both kiosk readability and one-handed mobile use, then validated with real visitor scenarios.",
+      "I contributed to a responsive React/JavaScript front-end that handles fare estimates, route guidance, and itinerary planning, plus QR code integration so visitors can move between physical signage and the digital app. The system was designed for both kiosk readability and one-handed mobile use. We tested it using actual travel scenarios to check if the routes, fare estimates, and mobile flow were practical.",
     stack: ["React", "JavaScript", "QR Integration", "Responsive UI"],
     githubUrl: "https://github.com/Shaloh69/ARIAT-Na",
     demoUrl: "https://ariat-na.onrender.com/",
