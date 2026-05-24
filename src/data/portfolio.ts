@@ -182,11 +182,10 @@ export const projects: Project[] = [
     performance:
       "Focused on organized state, reusable components, and lean dashboard screens so frequent actions stay quick on everyday devices.",
     githubUrl: "https://github.com/jumaoasjoshua322-maker/camilocatering",
-    demoUrl:
-      "mailto:jumaoas.joshuaa@gmail.com?subject=Camilo's%20Catering%20SaaS%20demo%20request",
+    demoUrl: "https://camilocatering.vercel.app/",
     accent: "teal",
     screenshots: {
-      chromeLabel: "camilos-catering.local",
+      chromeLabel: "camilocatering.vercel.app",
       hero: {
         src: "/projects/camilos-catering/hero.png",
         alt: "Camilo's Catering homepage — hero with 'Premium Catering for Every Occasion', a wedding photo background, View packages and Get a quote CTAs, and a dark stats strip below.",
