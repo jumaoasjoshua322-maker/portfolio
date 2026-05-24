@@ -38,9 +38,9 @@ export function HeroSection() {
         >
           <h1
             id="hero-heading"
-            className="text-balance text-5xl font-semibold leading-[1.05] tracking-tight text-white sm:text-6xl lg:text-7xl"
+            className="text-balance text-4xl font-semibold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-6xl"
           >
-            I build full-stack web apps with React, Node, and MongoDB, with a focus on practical systems people can actually use.
+            I build full-stack web apps with React, Node, and MongoDB — focused on practical systems people can actually use.
           </h1>
           <p className="mt-6 max-w-2xl text-base leading-7 text-zinc-400 sm:text-lg">
             {profile.headline}
