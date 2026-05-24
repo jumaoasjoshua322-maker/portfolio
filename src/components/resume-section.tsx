@@ -26,8 +26,8 @@ export function ResumeSection() {
         <SectionHeading
           headingId="resume-heading"
           eyebrow="Resume"
-          title="ATS-ready resume, written for humans first."
-          description="Summary, education, skills, and projects — formatted to scan in 30 seconds and parse cleanly through any applicant tracking system."
+          title="Get my resume."
+          description="One-page, ATS-ready, June 2026 graduate. Updated this month."
           icon={<FileText className="h-3.5 w-3.5" />}
           align="center"
         />
