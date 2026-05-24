@@ -18,14 +18,13 @@ export type Project = {
   id: string;
   title: string;
   label: string;
+  /** One-line context shown above the title (e.g. "2026 · Multi-tenant SaaS"). */
+  meta: string;
   summary: string;
-  impact: string;
+  /** Two short paragraphs replacing the old 4-column breakdown. */
+  problem: string;
+  approach: string;
   stack: string[];
-  features: string[];
-  challenges: string[];
-  process: string[];
-  architecture: string[];
-  performance: string;
   githubUrl: string;
   demoUrl: string;
   accent: "teal";
@@ -34,11 +33,8 @@ export type Project = {
    * these instead of the stylized fallback mockup.
    */
   screenshots?: {
-    /** Browser chrome label (e.g. "ariat-na.onrender.com"). */
     chromeLabel: string;
-    /** Hero shot — shown full-width at the top of the mockup card. */
     hero: ProjectScreenshot;
-    /** Supporting shots, rendered in a responsive grid below the hero. */
     supporting: ProjectScreenshot[];
   };
 };
@@ -49,7 +45,7 @@ export const profile = {
   location: "Mandaue City, Cebu, Philippines",
   headline:
     "Currently finishing Computer Engineering at the University of Cebu. Open to junior and associate software engineering roles.",
-  availability: "Open to junior and associate software engineering roles",
+  availability: "Available — June 2026",
   email: "jumaoas.joshuaa@gmail.com",
   phone: "+63 967-093-7612",
   github: "https://github.com/jumaoasjoshua322-maker",
@@ -67,24 +63,55 @@ export const heroStack = [
   "AI-assisted",
 ];
 
+/**
+ * Short prose used in the About section's bio.
+ * Two paragraphs, no marketing fluff.
+ */
+export const aboutBio = [
+  "I'm a Computer Engineering student in Cebu, finishing in June 2026. I build full-stack web systems — the kind that move beyond static pages into real authentication, database-connected workflows, and interfaces that hold up on real devices.",
+  "Most of what I know comes from shipping. I work in React, Node, and MongoDB, lean on Git and AI-assisted tooling for speed, and trust debugging more than tutorials when something breaks.",
+];
+
 export const aboutTimeline = [
   {
     year: "Jun 2026",
     title: "BS Computer Engineering",
     description:
-      "Expected graduation from the University of Cebu Lapu-Lapu and Mandaue. Building a foundation in systems thinking, logic design, programming, and practical engineering.",
+      "Expected graduation from the University of Cebu Lapu-Lapu and Mandaue.",
   },
   {
     year: "2025–2026",
     title: "ARIAT-Na — Capstone thesis",
     description:
-      "Contributed to a smart tourist assistance system providing fare estimation, route guidance, and itinerary planning for Cebu Province, with kiosk and mobile-friendly interfaces.",
+      "Smart tourist assistance for Cebu Province: fare estimation, route guidance, itinerary planning. Live.",
+  },
+  {
+    year: "2026",
+    title: "Camilo's Catering SaaS",
+    description:
+      "Multi-tenant catering platform with React, Node, and MongoDB. Shipped and live.",
   },
   {
     year: "2023–2024",
     title: "Top 8, Differential Equations Exam",
     description:
-      "Placed in the Top 8 in the Engineering Departmental Differential Equations Exam — strongest academic recognition to date.",
+      "Engineering Departmental recognition — strongest academic result to date.",
+  },
+];
+
+/** One sentence per skills group. Replaces the old 9-card grid. */
+export const skillsProse = [
+  {
+    label: "Frontend",
+    body: "Day-to-day in React with TypeScript. Comfortable in HTML, CSS, and JavaScript fundamentals — the layer most of my shipped UI lives in.",
+  },
+  {
+    label: "Backend & data",
+    body: "Node.js for API routes, REST for client-server communication, MongoDB for the multi-tenant catering platform. Familiar with the auth + persistence + deploy loop end-to-end.",
+  },
+  {
+    label: "Workflow",
+    body: "Git for version control, AI-assisted tooling (Claude Code, Copilot, ChatGPT) for research and review, and a habit of debugging until it actually works on real devices.",
   },
 ];
 
@@ -139,48 +166,16 @@ export const skills: Skill[] = [
 export const projects: Project[] = [
   {
     id: "camilos-catering-saas",
-    title: "Camilo's Catering SaaS Platform",
-    label: "Personal full-stack development project · 2026",
+    title: "Camilo's Catering SaaS",
+    label: "Multi-tenant SaaS",
+    meta: "2026 · Personal project · Live",
     summary:
-      "A multi-tenant catering management web application with a modern user interface and organized digital workflows for staff and operators.",
-    impact:
-      "Positions a local catering business like a scalable digital product: cleaner workflows, authenticated roles, responsive access, and a foundation for tenant-aware growth.",
-    stack: [
-      "JavaScript",
-      "React.js",
-      "Node.js",
-      "MongoDB",
-      "GitHub",
-      "AI-Assisted Development Tools",
-    ],
-    features: [
-      "Multi-tenant account structure",
-      "Authentication and protected workflows",
-      "Modern dashboard-style management UI",
-      "Customer and order data organization",
-      "Responsive layouts for admin and staff usage",
-      "Structured debugging, testing, and optimization",
-    ],
-    challenges: [
-      "Separated business logic from interface concerns so the app could scale beyond a single static website.",
-      "Built authenticated workflows that protect operational pages without making the UX feel heavy.",
-      "Designed dashboard sections around fast scanning, status clarity, and repeat staff usage.",
-    ],
-    process: [
-      "Mapped core catering workflows and user roles",
-      "Modeled data around customers, services, and tenant context",
-      "Implemented a React UI connected to backend routes",
-      "Validated responsive behavior and fixed full-stack issues",
-    ],
-    architecture: [
-      "React dashboard client",
-      "Node.js API layer",
-      "MongoDB document storage",
-      "Authentication guard",
-      "Tenant-aware data access pattern",
-    ],
-    performance:
-      "Focused on organized state, reusable components, and lean dashboard screens so frequent actions stay quick on everyday devices.",
+      "A multi-tenant catering management platform with authenticated dashboards and organized operational data.",
+    problem:
+      "A local Cebu catering business was running operations through messages and spreadsheets — bookings, menus, and customer records scattered across tools. The team needed one place to manage tenants, orders, and staff access without rebuilding from scratch every time the business grew.",
+    approach:
+      "I designed and shipped a React dashboard backed by a Node API and MongoDB, with tenant-aware data access, authentication, and a layout built for fast scanning by repeat staff users. The result turns the business into a scalable digital product instead of a static brochure site.",
+    stack: ["React", "Node.js", "MongoDB", "REST APIs", "Authentication"],
     githubUrl: "https://github.com/jumaoasjoshua322-maker/camilocatering",
     demoUrl: "https://camilocatering.vercel.app/",
     accent: "teal",
@@ -188,7 +183,7 @@ export const projects: Project[] = [
       chromeLabel: "camilocatering.vercel.app",
       hero: {
         src: "/projects/camilos-catering/hero.png",
-        alt: "Camilo's Catering homepage — hero with 'Premium Catering for Every Occasion', a wedding photo background, View packages and Get a quote CTAs, and a dark stats strip below.",
+        alt: "Camilo's Catering homepage — hero with 'Premium Catering for Every Occasion', a wedding photo background, View packages and Get a quote CTAs.",
         width: 1920,
         height: 888,
       },
@@ -216,47 +211,16 @@ export const projects: Project[] = [
   },
   {
     id: "ariat-na-tourist-guide",
-    title: "ARIAT-Na Smart Tourist Guide & Fare Estimation System",
-    label: "Capstone / thesis project · 2025–2026",
+    title: "ARIAT-Na",
+    label: "Smart tourism · Capstone",
+    meta: "2025–2026 · BS Computer Engineering thesis · Live",
     summary:
-      "A smart tourist assistance system providing fare estimation, route guidance, and itinerary planning for Cebu Province, with kiosk and mobile-friendly access.",
-    impact:
-      "Turns tourism assistance into a practical self-service system that helps visitors make faster movement decisions, with workflows validated against real user scenarios.",
-    stack: [
-      "JavaScript",
-      "HTML/CSS",
-      "QR Code Integration",
-      "Responsive Interface Design",
-      "GitHub",
-    ],
-    features: [
-      "Fare estimation for Cebu Province trips",
-      "Route guidance for tourist destinations",
-      "Itinerary planning workflows",
-      "QR code integration for physical-to-digital touchpoints",
-      "Kiosk and mobile-accessible interfaces",
-      "System testing and workflow validation",
-    ],
-    challenges: [
-      "Balanced kiosk readability with mobile density so the same system worked across very different contexts.",
-      "Validated fare and route flows around real visitor decisions instead of treating them as static information pages.",
-      "Designed QR interactions to reduce friction for tourists moving between physical and digital touchpoints.",
-    ],
-    process: [
-      "Identified visitor scenarios and tourism guidance needs",
-      "Designed route, fare, and itinerary flows for quick access",
-      "Built responsive interfaces for kiosk and phone usage",
-      "Tested workflows for accuracy, clarity, and reliability",
-    ],
-    architecture: [
-      "Responsive web client",
-      "Route guidance module",
-      "Fare estimation logic",
-      "QR code entry points",
-      "Kiosk and mobile layout modes",
-    ],
-    performance:
-      "Prioritized fast-loading screens, clear touch targets, and direct route information for users who may be on unstable mobile connections.",
+      "A smart tourist assistance system with fare estimation, route guidance, and itinerary planning across Cebu Province.",
+    problem:
+      "Tourists landing in Cebu had no single source of truth for getting between destinations, estimating fares, or planning a day trip. The information existed across signs, blog posts, and word of mouth — none of it queryable from a phone or kiosk in the moment.",
+    approach:
+      "I contributed to a responsive React/JavaScript front-end that handles fare estimates, route guidance, and itinerary planning, plus QR code integration so visitors can move between physical signage and the digital app. The system was designed for both kiosk readability and one-handed mobile use, then validated with real visitor scenarios.",
+    stack: ["React", "JavaScript", "QR Integration", "Responsive UI"],
     githubUrl: "https://github.com/Shaloh69/ARIAT-Na",
     demoUrl: "https://ariat-na.onrender.com/",
     accent: "teal",
@@ -286,48 +250,9 @@ export const projects: Project[] = [
   },
 ];
 
-export const experience = [
-  {
-    period: "2026 · Personal full-stack project",
-    title: "Camilo's Catering SaaS — full-stack implementation",
-    description:
-      "Developed a multi-tenant catering management web application with modern UI, organized digital workflows, authentication, database integration, and responsive layouts.",
-    points: [
-      "Frontend + backend integration",
-      "Authentication and tenant context",
-      "Database integration",
-      "Debugging, testing, and optimization",
-    ],
-  },
-  {
-    period: "2025–2026 · Capstone / thesis",
-    title: "ARIAT-Na — smart tourism collaboration",
-    description:
-      "Contributed to a smart tourist assistance system for Cebu Province with fare estimation, route guidance, and itinerary planning. Helped design kiosk and mobile interfaces and participated in system testing and workflow validation.",
-    points: [
-      "Fare and route workflows",
-      "QR code integration",
-      "Kiosk and mobile UX",
-      "System testing and validation",
-    ],
-  },
-  {
-    period: "Modern development workflow",
-    title: "AI-assisted engineering with human judgment",
-    description:
-      "Uses ChatGPT, Claude Code, and GitHub Copilot to accelerate learning, inspect errors, plan implementation options, and refine code while staying accountable for final decisions.",
-    points: [
-      "Prompted research",
-      "Code review support",
-      "Error analysis",
-      "Faster iteration loops",
-    ],
-  },
-];
-
 export const resumeHighlights = {
   summary:
-    "Computer Engineering student with experience in full-stack development, web-based systems, and software project collaboration. Familiar with front-end development, database integration, AI-assisted workflows, debugging, and responsive interface design. Passionate about building practical systems and continuously improving technical skills through academic and personal projects.",
+    "Computer Engineering student with experience in full-stack development, web-based systems, and software project collaboration. Familiar with front-end development, database integration, AI-assisted workflows, debugging, and responsive interface design.",
   education: [
     "Bachelor of Science in Computer Engineering",
     "University of Cebu Lapu-Lapu and Mandaue",

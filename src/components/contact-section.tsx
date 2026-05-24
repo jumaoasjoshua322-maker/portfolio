@@ -1,21 +1,11 @@
 "use client";
 
-import {
-  AlertCircle,
-  BriefcaseBusiness,
-  CheckCircle2,
-  Loader2,
-  Mail,
-  MessageSquare,
-  Send,
-} from "lucide-react";
-import { FormEvent, useState } from "react";
+import { AlertCircle, CheckCircle2, Loader2, Send } from "lucide-react";
+import { type FormEvent, useState } from "react";
 
 import { Reveal } from "@/components/reveal";
-import { SectionHeading } from "@/components/section-heading";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { GitHubIcon, LinkedInIcon } from "@/components/social-icons";
 import { Textarea } from "@/components/ui/textarea";
 import { profile } from "@/data/portfolio";
 
@@ -46,7 +36,6 @@ export function ContactSection() {
       email: String(data.get("email") ?? ""),
       type: String(data.get("type") ?? ""),
       message: String(data.get("message") ?? ""),
-      // Honeypot — real users leave this empty.
       website: String(data.get("website") ?? ""),
     };
 
@@ -91,200 +80,149 @@ export function ContactSection() {
       aria-labelledby="contact-heading"
     >
       <Reveal>
-        <SectionHeading
-          headingId="contact-heading"
-          eyebrow="Contact"
-          title="Always learning, always building."
-          description="Reach out for junior software roles, associate engineering openings and freelance full-stack systems."
-          icon={<MessageSquare className="h-3.5 w-3.5" />}
-          align="center"
-        />
+        <div className="mx-auto max-w-2xl text-center">
+          <h2
+            id="contact-heading"
+            className="text-3xl font-semibold leading-tight tracking-tight text-white sm:text-4xl"
+          >
+            Let&apos;s build something.
+          </h2>
+          <p className="mt-3 text-base leading-7 text-zinc-400 sm:text-lg">
+            Open for junior, associate, and freelance work. Replies usually
+            within a day or two — or email{" "}
+            <a
+              href={`mailto:${profile.email}`}
+              className="text-cyan-300 underline decoration-cyan-300/30 underline-offset-4 hover:decoration-cyan-300"
+            >
+              {profile.email}
+            </a>
+            {" "}directly.
+          </p>
+        </div>
       </Reveal>
 
-      <div className="grid gap-6 lg:grid-cols-[0.88fr_1.12fr]">
-        <Reveal>
-          <aside className="space-y-4">
-            <div className="rounded-xl border border-emerald-300/20 bg-emerald-300/10 p-5">
-              <div className="flex items-start gap-4">
-                <div className="grid h-11 w-11 shrink-0 place-items-center rounded-lg border border-emerald-300/25 bg-emerald-300/12 text-emerald-100">
-                  <BriefcaseBusiness className="h-5 w-5" />
-                </div>
-                <div>
-                  <p className="font-semibold text-white">Open to opportunities</p>
-                  <p className="mt-2 text-sm leading-6 text-emerald-50/78">
-                    Open to junior developer,
-                    associate software engineer, and freelance full-stack roles.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {[
-              {
-                icon: Mail,
-                title: "Email",
-                value: profile.email,
-                href: `mailto:${profile.email}`,
-              },
-              {
-                icon: GitHubIcon,
-                title: "GitHub",
-                value: "Project code and collaboration",
-                href: profile.github,
-              },
-              {
-                icon: LinkedInIcon,
-                title: "LinkedIn",
-                value: "Professional profile",
-                href: profile.linkedin,
-              },
-            ].map((item) => (
-              <a
-                key={item.title}
-                href={item.href}
-                target={item.href.startsWith("http") ? "_blank" : undefined}
-                rel={item.href.startsWith("http") ? "noreferrer" : undefined}
-                className="group flex items-center gap-4 rounded-xl border border-white/10 bg-white/4.5 p-4 transition hover:-translate-y-1 hover:border-cyan-300/25 hover:bg-white/6.5"
-              >
-                <div className="grid h-10 w-10 place-items-center rounded-lg border border-white/10 bg-black/24 text-cyan-100">
-                  <item.icon className="h-5 w-5" />
-                </div>
-                <div>
-                  <p className="font-medium text-white">{item.title}</p>
-                  <p className="text-sm text-zinc-400">{item.value}</p>
-                </div>
-              </a>
-            ))}
-          </aside>
-        </Reveal>
-
-        <Reveal delay={0.08}>
-          <form
-            onSubmit={handleSubmit}
-            className="rounded-xl border border-white/10 bg-white/4.5 p-5 shadow-[0_24px_100px_rgba(0,0,0,0.28)] sm:p-6"
-            noValidate
+      <Reveal delay={0.06}>
+        <form
+          onSubmit={handleSubmit}
+          className="mx-auto mt-10 max-w-2xl rounded-xl border border-white/10 bg-white/4.5 p-5 shadow-[0_24px_100px_rgba(0,0,0,0.28)] sm:p-7"
+          noValidate
+        >
+          {/* Honeypot — hidden from real users, visible to bots. */}
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute left-[-10000px] top-[-10000px] h-0 w-0 overflow-hidden"
           >
-            {/* Honeypot — hidden from real users, visible to bots. */}
-            <div
-              aria-hidden="true"
-              className="pointer-events-none absolute -left-[10000px] -top-[10000px] h-0 w-0 overflow-hidden"
-            >
-              <label>
-                Leave this field empty
-                <input
-                  type="text"
-                  name="website"
-                  tabIndex={-1}
-                  autoComplete="off"
-                />
-              </label>
-            </div>
-
-            <div className="grid gap-4 sm:grid-cols-2">
-              <label className="space-y-2">
-                <span className="text-sm font-medium text-zinc-300">Name</span>
-                <Input
-                  name="name"
-                  placeholder="Your name"
-                  required
-                  minLength={2}
-                  maxLength={80}
-                />
-              </label>
-              <label className="space-y-2">
-                <span className="text-sm font-medium text-zinc-300">Email</span>
-                <Input
-                  name="email"
-                  type="email"
-                  placeholder="you@example.com"
-                  required
-                  maxLength={120}
-                />
-              </label>
-            </div>
-
-            <label className="mt-4 block space-y-2">
-              <span className="text-sm font-medium text-zinc-300">
-                Opportunity type
-              </span>
-              <select
-                name="type"
-                defaultValue={opportunityTypes[0]}
-                className="h-11 w-full rounded-lg border border-white/10 bg-black/30 px-3 py-2 text-sm text-white outline-none transition focus:border-cyan-300/50 focus:ring-2 focus:ring-cyan-300/15"
-              >
-                {opportunityTypes.map((type) => (
-                  <option
-                    key={type}
-                    value={type}
-                    className="bg-[#090b10] text-white"
-                  >
-                    {type}
-                  </option>
-                ))}
-              </select>
-            </label>
-
-            <label className="mt-4 block space-y-2">
-              <span className="text-sm font-medium text-zinc-300">Message</span>
-              <Textarea
-                name="message"
-                placeholder="Tell Joshua about the role, project, timeline, or next step. (10+ characters)"
-                required
-                minLength={10}
-                maxLength={4000}
+            <label>
+              Leave this field empty
+              <input
+                type="text"
+                name="website"
+                tabIndex={-1}
+                autoComplete="off"
               />
             </label>
+          </div>
 
-            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-              <div className="flex items-center gap-2 text-sm text-zinc-400">
-                <CheckCircle2 className="h-4 w-4 text-emerald-200" />
-                Replies usually within a day or two.
-              </div>
-              <Button type="submit" disabled={isSubmitting} aria-busy={isSubmitting}>
-                {isSubmitting ? (
-                  <>
-                    <Loader2 className="h-4 w-4 animate-spin" />
-                    Sending…
-                  </>
-                ) : (
-                  <>
-                    <Send className="h-4 w-4" />
-                    Send Message
-                  </>
-                )}
-              </Button>
-            </div>
+          <div className="grid gap-4 sm:grid-cols-2">
+            <label className="space-y-2">
+              <span className="text-sm font-medium text-zinc-300">Name</span>
+              <Input
+                name="name"
+                placeholder="Your name"
+                required
+                minLength={2}
+                maxLength={80}
+              />
+            </label>
+            <label className="space-y-2">
+              <span className="text-sm font-medium text-zinc-300">Email</span>
+              <Input
+                name="email"
+                type="email"
+                placeholder="you@example.com"
+                required
+                maxLength={120}
+              />
+            </label>
+          </div>
 
-            {formState.status === "success" ? (
-              <p
-                className="mt-4 flex items-start gap-2 rounded-lg border border-emerald-300/20 bg-emerald-300/10 px-3 py-2 text-sm text-emerald-100"
-                role="status"
-              >
-                <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0" />
-                Message sent. I&apos;ll reply to your email shortly.
+          <label className="mt-4 block space-y-2">
+            <span className="text-sm font-medium text-zinc-300">
+              Opportunity type
+            </span>
+            <select
+              name="type"
+              defaultValue={opportunityTypes[0]}
+              className="h-11 w-full rounded-lg border border-white/10 bg-black/30 px-3 py-2 text-sm text-white outline-none transition focus:border-cyan-300/50 focus:ring-2 focus:ring-cyan-300/15"
+            >
+              {opportunityTypes.map((type) => (
+                <option
+                  key={type}
+                  value={type}
+                  className="bg-[#090b10] text-white"
+                >
+                  {type}
+                </option>
+              ))}
+            </select>
+          </label>
+
+          <label className="mt-4 block space-y-2">
+            <span className="text-sm font-medium text-zinc-300">Message</span>
+            <Textarea
+              name="message"
+              placeholder="Tell me about the role, project, or next step. (10+ characters)"
+              required
+              minLength={10}
+              maxLength={4000}
+            />
+          </label>
+
+          <div className="mt-6 flex justify-end">
+            <Button type="submit" disabled={isSubmitting} aria-busy={isSubmitting}>
+              {isSubmitting ? (
+                <>
+                  <Loader2 className="h-4 w-4 animate-spin" />
+                  Sending…
+                </>
+              ) : (
+                <>
+                  <Send className="h-4 w-4" />
+                  Send Message
+                </>
+              )}
+            </Button>
+          </div>
+
+          {formState.status === "success" ? (
+            <p
+              className="mt-4 flex items-start gap-2 rounded-lg border border-emerald-300/20 bg-emerald-300/10 px-3 py-2 text-sm text-emerald-100"
+              role="status"
+            >
+              <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0" />
+              Message sent. I&apos;ll reply to your email shortly.
+            </p>
+          ) : null}
+
+          {formState.status === "error" ? (
+            <div
+              className="mt-4 flex items-start gap-2 rounded-lg border border-rose-300/25 bg-rose-300/10 px-3 py-2 text-sm text-rose-100"
+              role="alert"
+            >
+              <AlertCircle className="mt-0.5 h-4 w-4 shrink-0" />
+              <p>
+                {formState.message}{" "}
+                <a
+                  className="underline underline-offset-2"
+                  href={`mailto:${profile.email}`}
+                >
+                  Email me directly.
+                </a>
               </p>
-            ) : null}
-
-            {formState.status === "error" ? (
-              <div
-                className="mt-4 flex items-start gap-2 rounded-lg border border-rose-300/25 bg-rose-300/10 px-3 py-2 text-sm text-rose-100"
-                role="alert"
-              >
-                <AlertCircle className="mt-0.5 h-4 w-4 shrink-0" />
-                <p>
-                  {formState.message}{" "}
-                  <a
-                    className="underline underline-offset-2"
-                    href={`mailto:${profile.email}`}
-                  >
-                    Email me directly.
-                  </a>
-                </p>
-              </div>
-            ) : null}
-          </form>
-        </Reveal>
-      </div>
+            </div>
+          ) : null}
+        </form>
+      </Reveal>
     </section>
   );
 }

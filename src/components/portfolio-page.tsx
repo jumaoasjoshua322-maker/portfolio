@@ -1,6 +1,5 @@
 import { AboutSection } from "@/components/about-section";
 import { ContactSection } from "@/components/contact-section";
-import { ExperienceSection } from "@/components/experience-section";
 import { HeroSection } from "@/components/hero-section";
 import { ProjectsSection } from "@/components/projects-section";
 import { ResumeSection } from "@/components/resume-section";
@@ -14,10 +13,9 @@ export function PortfolioPage() {
       <SiteHeader />
       <main id="main">
         <HeroSection />
+        <ProjectsSection />
         <AboutSection />
         <SkillsSection />
-        <ProjectsSection />
-        <ExperienceSection />
         <ResumeSection />
         <ContactSection />
       </main>

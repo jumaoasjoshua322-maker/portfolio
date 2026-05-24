@@ -11,7 +11,7 @@ export function SiteFooter() {
         <div>
           <p className="font-semibold text-white">Joshua Jumao-as</p>
           <p className="mt-1 text-sm font-medium uppercase tracking-wide text-zinc-500">
-            Aspiring Software Engineer
+            Software Engineer · Cebu, PH
           </p>
         </div>
         <div className="flex items-center gap-2">
