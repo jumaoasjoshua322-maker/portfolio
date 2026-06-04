@@ -73,8 +73,8 @@ export const heroStack = [
  * Two paragraphs, no marketing fluff.
  */
 export const aboutBio = [
-  "I'm a Computer Engineering student in Cebu, finishing in June 2026. I build full-stack web systems — the kind that move beyond static pages into real authentication, database-connected workflows, and interfaces that still work well outside of desktop previews.",
-  "Most of what I know comes from shipping. I work in React, Node, and MongoDB. I use Git daily and rely on AI tools mostly for research, debugging, and reviewing ideas while building.",
+  "I'm a Computer Engineering student in Cebu, finishing in June 2026. I build web applications with React, Node.js, and MongoDB, focusing on authentication, APIs, database-backed workflows, and responsive interfaces.",
+  "Most of what I know comes from shipping. I use Git daily and treat AI tools as part of the workflow—for research, debugging, and reviewing ideas while building.",
 ];
 
 export const aboutTimeline = [
