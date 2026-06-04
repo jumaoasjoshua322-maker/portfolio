@@ -50,7 +50,10 @@ function ProjectCaseStudy({
 
   return (
     <Reveal delay={index * 0.06}>
-      <article id={project.id} className="grid gap-8 lg:grid-cols-[1.04fr_0.96fr]">
+      <article
+        id={project.id}
+        className="grid items-start gap-8 lg:grid-cols-[1.04fr_0.96fr]"
+      >
         <ProjectScreenshots project={project} className="order-2 lg:order-1" />
 
         <div className="order-1 flex flex-col justify-center lg:order-2">
