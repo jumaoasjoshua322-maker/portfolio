@@ -24,8 +24,8 @@ export function ProjectsSection() {
             Selected projects.
           </h2>
           <p className="mt-3 text-base leading-7 text-zinc-400 sm:text-lg">
-            Two end-to-end builds, both live: a multi-tenant catering SaaS and
-            a smart tourism capstone shipped for Cebu Province.
+            Two deployed projects with real screens, live demos, GitHub repos,
+            and full-stack product decisions.
           </p>
         </div>
       </Reveal>
@@ -51,12 +51,15 @@ function ProjectCaseStudy({
   return (
     <Reveal delay={index * 0.06}>
       <article id={project.id} className="grid gap-8 lg:grid-cols-[1.04fr_0.96fr]">
-        <ProjectScreenshots project={project} />
+        <ProjectScreenshots project={project} className="order-2 lg:order-1" />
 
-        <div className="flex flex-col justify-center">
-          <div className="flex items-center gap-3 text-xs font-medium uppercase tracking-wide text-zinc-500">
+        <div className="order-1 flex flex-col justify-center lg:order-2">
+          <div className="flex flex-wrap items-center gap-2 text-xs font-medium uppercase tracking-wide text-zinc-500">
             <span className="font-mono text-cyan-300">{projectNumber}</span>
             <span>{project.meta}</span>
+            <span className="rounded-md border border-cyan-300/20 bg-cyan-300/10 px-2 py-0.5 text-cyan-100">
+              {project.label}
+            </span>
           </div>
 
           <h3 className="mt-3 text-2xl font-semibold leading-tight text-white sm:text-3xl">
@@ -67,9 +70,18 @@ function ProjectCaseStudy({
             {project.summary}
           </p>
 
-          <div className="mt-6 space-y-4 text-sm leading-7 text-zinc-400">
+          <div className="mt-6 grid gap-4 text-sm leading-7 text-zinc-400">
+            <ProseBlock label="My role">{project.role}</ProseBlock>
             <ProseBlock label="Problem">{project.problem}</ProseBlock>
             <ProseBlock label="Approach">{project.approach}</ProseBlock>
+            <div className="grid gap-4 sm:grid-cols-2">
+              <ListBlock label="What I built" items={project.features} />
+              <ListBlock
+                label="Technical decisions"
+                items={project.technicalDecisions}
+              />
+            </div>
+            <ProseBlock label="Result">{project.impact}</ProseBlock>
           </div>
 
           <div className="mt-6 flex flex-wrap gap-1.5">
@@ -122,7 +134,31 @@ function ProseBlock({
   );
 }
 
-function ProjectScreenshots({ project }: { project: Project }) {
+function ListBlock({ label, items }: { label: string; items: string[] }) {
+  return (
+    <div className="border-l-2 border-white/10 pl-4">
+      <p className="mb-1.5 text-[11px] font-semibold uppercase tracking-wider text-zinc-500">
+        {label}
+      </p>
+      <ul className="space-y-1.5">
+        {items.map((item) => (
+          <li key={item} className="flex gap-2 text-zinc-400">
+            <span className="mt-[0.7em] h-1 w-1 shrink-0 rounded-full bg-cyan-300/70" />
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+function ProjectScreenshots({
+  project,
+  className,
+}: {
+  project: Project;
+  className?: string;
+}) {
   if (!project.screenshots) return null;
   const { hero, supporting, chromeLabel } = project.screenshots;
   const supportingGrid =
@@ -133,7 +169,12 @@ function ProjectScreenshots({ project }: { project: Project }) {
       : "sm:grid-cols-2";
 
   return (
-    <div className="relative overflow-hidden rounded-xl border border-white/12 bg-[#090c11] p-3 shadow-[0_24px_100px_rgba(0,0,0,0.3)] sm:p-4">
+    <div
+      className={cn(
+        "relative overflow-hidden rounded-xl border border-white/12 bg-[#090c11] p-3 shadow-[0_24px_100px_rgba(0,0,0,0.3)] sm:p-4",
+        className,
+      )}
+    >
       <BrowserFrame label={chromeLabel}>
         <div
           className="relative w-full bg-black"

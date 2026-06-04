@@ -21,9 +21,14 @@ export type Project = {
   /** One-line context shown above the title (e.g. "2026 · Multi-tenant SaaS"). */
   meta: string;
   summary: string;
+  /** What Joshua personally owned or contributed. */
+  role: string;
   /** Two short paragraphs replacing the old 4-column breakdown. */
   problem: string;
   approach: string;
+  features: string[];
+  technicalDecisions: string[];
+  impact: string;
   stack: string[];
   githubUrl: string;
   demoUrl: string;
@@ -44,8 +49,8 @@ export const profile = {
   role: "Full-Stack Developer · Cebu, Philippines",
   location: "Mandaue City, Cebu, Philippines",
   headline:
-    "Currently finishing Computer Engineering at the University of Cebu. Looking for opportunities to grow as a software engineer after graduation.",
-  availability: "Available — June 2026",
+    "Computer Engineering student in Cebu focused on practical software: dashboards, forms, APIs, database-backed workflows, and responsive interfaces that work on real devices.",
+  availability: "Available after graduation: June 2026",
   email: "jumaoas.joshuaa@gmail.com",
   phone: "+63 967-093-7612",
   github: "https://github.com/jumaoasjoshua322-maker",
@@ -103,15 +108,15 @@ export const aboutTimeline = [
 export const skillsProse = [
   {
     label: "Frontend",
-    body: "Day-to-day in React with TypeScript. Comfortable in HTML, CSS, and JavaScript fundamentals — the layer most of my shipped UI lives in.",
+    body: "Most of my shipped UI is built in React, TypeScript, HTML, CSS, and JavaScript, with attention to readable layouts, form behavior, and responsive screens.",
   },
   {
     label: "Backend & data",
-    body: "Node.js for API routes, REST for client-server communication, MongoDB for the multi-tenant catering platform. Comfortable handling authentication, database integration, and deployment across full-stack projects.",
+    body: "I use Node.js for API work, REST for client-server communication, and MongoDB for document data in full-stack projects that need authentication and persistent records.",
   },
   {
     label: "Workflow",
-    body: "Git for version control, AI-assisted tooling (Claude Code, Copilot, ChatGPT) for research and review, and a habit of debugging until it actually works on real devices.",
+    body: "Git is part of my daily workflow. I also use AI tools for research, debugging, and review, while validating the final behavior in the browser instead of trusting generated output blindly.",
   },
 ];
 
@@ -170,11 +175,25 @@ export const projects: Project[] = [
     label: "Multi-tenant SaaS",
     meta: "2026 · Personal project · Live",
     summary:
-      "A multi-tenant catering management platform with authenticated dashboards and organized operational data.",
+      "A deployed catering platform that brings package, booking, customer, and staff workflows into one web system.",
+    role:
+      "Full-stack developer. I handled the React interface, Node/REST integration, authentication flow, MongoDB-backed data structure, and production deployment.",
     problem:
       "A local Cebu catering business was running operations through messages and spreadsheets — bookings, menus, and customer records scattered across tools. The team needed one place to manage tenants, orders, and staff access without rebuilding from scratch every time the business grew.",
     approach:
       "I designed and shipped a React dashboard backed by a Node API and MongoDB, with tenant-aware data access, authentication, and a layout built for fast scanning by repeat staff users. The system gave the business a more organized way to manage bookings, staff access, and customer data in one place.",
+    features: [
+      "Public pages for packages, company information, and customer inquiries.",
+      "Authenticated workflows for organizing bookings, customers, and staff access.",
+      "Responsive screens designed for both browsing customers and repeat business users.",
+    ],
+    technicalDecisions: [
+      "Kept the product dashboard-first so operational data is easy to scan.",
+      "Used MongoDB documents for flexible catering packages, bookings, and customer records.",
+      "Separated public marketing pages from authenticated management workflows.",
+    ],
+    impact:
+      "Turned scattered catering operations into a live system that can be shared, tested, and improved around real business workflows.",
     stack: ["React", "Node.js", "MongoDB", "REST APIs", "Authentication"],
     githubUrl: "https://github.com/jumaoasjoshua322-maker/camilocatering",
     demoUrl: "https://camilocatering.vercel.app/",
@@ -216,10 +235,24 @@ export const projects: Project[] = [
     meta: "2025–2026 · BS Computer Engineering thesis · Live",
     summary:
       "A smart tourist assistance system with fare estimation, route guidance, and itinerary planning across Cebu Province.",
+    role:
+      "Front-end contributor for the capstone team. I worked on responsive React/JavaScript flows, route and itinerary screens, QR handoff behavior, and kiosk/mobile usability.",
     problem:
-      "Tourists in Cebu often had to rely on scattered information from blogs, signages, and social media posts.",
+      "Tourists in Cebu often rely on scattered information from blogs, signages, and social media posts, especially when checking fares, routes, and what to visit next.",
     approach:
       "I contributed to a responsive React/JavaScript front-end that handles fare estimates, route guidance, and itinerary planning, plus QR code integration so visitors can move between physical signage and the digital app. The system was designed for both kiosk readability and one-handed mobile use. We tested it using actual travel scenarios to check if the routes, fare estimates, and mobile flow were practical.",
+    features: [
+      "Fare estimation and route guidance for Cebu travel scenarios.",
+      "Itinerary planning flow for visitors choosing destinations.",
+      "QR handoff from kiosk-style screens to a phone-friendly trip view.",
+    ],
+    technicalDecisions: [
+      "Designed screens to work for both public kiosk readability and mobile use.",
+      "Kept the trip-planning choices simple so tourists can continue quickly.",
+      "Validated the flow against actual travel scenarios instead of only desktop previews.",
+    ],
+    impact:
+      "Helped turn scattered tourist information into a live capstone system that connects physical signage with a digital guide for Cebu travel.",
     stack: ["React", "JavaScript", "QR Integration", "Responsive UI"],
     githubUrl: "https://github.com/Shaloh69/ARIAT-Na",
     demoUrl: "https://ariat-na.onrender.com/",

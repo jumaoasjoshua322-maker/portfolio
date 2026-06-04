@@ -10,8 +10,8 @@ import { GitHubIcon, LinkedInIcon } from "@/components/social-icons";
 
 const navItems = [
   { href: "#projects", label: "Projects" },
-  { href: "#about", label: "About" },
   { href: "#skills", label: "Skills" },
+  { href: "#about", label: "About" },
   { href: "#resume", label: "Resume" },
 ];
 

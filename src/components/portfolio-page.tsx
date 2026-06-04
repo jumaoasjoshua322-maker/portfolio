@@ -14,8 +14,8 @@ export function PortfolioPage() {
       <main id="main">
         <HeroSection />
         <ProjectsSection />
-        <AboutSection />
         <SkillsSection />
+        <AboutSection />
         <ResumeSection />
         <ContactSection />
       </main>

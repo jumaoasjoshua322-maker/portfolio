@@ -30,10 +30,10 @@ export function ResumeSection() {
               id="resume-heading"
               className="text-3xl font-semibold leading-tight tracking-tight text-white sm:text-4xl"
             >
-              Get my resume.
+              Resume and background.
             </h2>
             <p className="mt-3 text-base leading-7 text-zinc-400 sm:text-lg">
-              One-page, June 2026 graduate.
+              One-page resume with education, stack, and shipped project work.
             </p>
           </div>
           <Button asChild size="lg">

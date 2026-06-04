@@ -85,11 +85,11 @@ export function ContactSection() {
             id="contact-heading"
             className="text-3xl font-semibold leading-tight tracking-tight text-white sm:text-4xl"
           >
-            Open to opportunities and collaborations.
+            Hiring for a junior full-stack role? Let&apos;s talk.
           </h2>
           <p className="mt-3 text-base leading-7 text-zinc-400 sm:text-lg">
-            Open for junior, associate, and freelance work. Replies usually
-            within a day or two — or email{" "}
+            I&apos;m open to junior, associate, and freelance full-stack work.
+            Send a short message here, or email{" "}
             <a
               href={`mailto:${profile.email}`}
               className="text-cyan-300 underline decoration-cyan-300/30 underline-offset-4 hover:decoration-cyan-300"

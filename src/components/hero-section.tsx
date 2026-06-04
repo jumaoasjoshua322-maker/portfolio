@@ -5,7 +5,7 @@ import { motion, useReducedMotion } from "framer-motion";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { heroStack, profile } from "@/data/portfolio";
+import { heroStack, profile, projects } from "@/data/portfolio";
 
 export function HeroSection() {
   const prefersReducedMotion = useReducedMotion();
@@ -40,7 +40,7 @@ export function HeroSection() {
             id="hero-heading"
             className="text-balance text-4xl font-semibold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-6xl"
           >
-            I build full-stack web apps with React, Node, and MongoDB — focused on practical systems people can actually use.
+            I build deployed full-stack web apps with React, Node.js, and MongoDB.
           </h1>
           <p className="mt-6 max-w-2xl text-base leading-7 text-zinc-400 sm:text-lg">
             {profile.headline}
@@ -51,27 +51,56 @@ export function HeroSection() {
           initial={prefersReducedMotion ? false : { opacity: 0, y: 18 }}
           animate={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
           transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1], delay: 0.12 }}
-          className="mt-10 flex flex-col gap-3 sm:flex-row"
+          className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center"
         >
           <Button asChild size="lg">
+            <a href="#projects">
+              View Projects
+              <ArrowRight className="h-4 w-4" />
+            </a>
+          </Button>
+          <Button asChild variant="secondary" size="lg">
             <a href={profile.resumePath} download>
               <Download className="h-5 w-5" />
               Download Resume
             </a>
           </Button>
-          <Button asChild variant="secondary" size="lg">
-            <a href="#contact">
-              <Mail className="h-5 w-5" />
-              Get in touch
-              <ArrowRight className="h-4 w-4" />
-            </a>
-          </Button>
+          <a
+            href="#contact"
+            className="inline-flex h-12 items-center justify-center gap-2 rounded-lg px-2 text-sm font-medium text-zinc-300 transition hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/60 sm:justify-start"
+          >
+            <Mail className="h-4 w-4" />
+            Contact me
+          </a>
         </motion.div>
 
         <motion.div
           initial={prefersReducedMotion ? false : { opacity: 0, y: 18 }}
           animate={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
           transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1], delay: 0.18 }}
+          className="mt-9 border-l border-cyan-300/30 pl-4"
+        >
+          <p className="text-xs font-medium uppercase tracking-wide text-cyan-200/80">
+            Shipped work
+          </p>
+          <div className="mt-3 flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-center">
+            {projects.map((project) => (
+              <a
+                key={project.id}
+                href={`#${project.id}`}
+                className="group inline-flex items-center gap-2 text-sm font-medium text-white transition hover:text-cyan-200"
+              >
+                {project.title}
+                <ArrowRight className="h-3.5 w-3.5 text-cyan-300 transition group-hover:translate-x-0.5" />
+              </a>
+            ))}
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={prefersReducedMotion ? false : { opacity: 0, y: 18 }}
+          animate={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
+          transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1], delay: 0.24 }}
           className="mt-12"
         >
           <p className="mb-3 text-xs font-medium uppercase tracking-wide text-zinc-500">
