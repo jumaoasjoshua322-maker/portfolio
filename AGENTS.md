@@ -26,7 +26,7 @@ The final result should resemble:
 - Raycast
 - Modern Awwwards developer portfolios
 
-This is NOT a generic student portfolio.
+This is NOT a generic graduate portfolio.
 
 The branding should communicate:
 - Strong engineering potential

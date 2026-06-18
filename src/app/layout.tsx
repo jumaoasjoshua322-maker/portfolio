@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   keywords: [
     "Joshua Jumao-as",
     "Full-Stack Developer Cebu",
-    "Computer Engineering student",
+    "Computer Engineering graduate",
     "React developer",
     "Node.js developer",
     "SaaS portfolio",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Joshua Jumao-as | Full-Stack Developer Portfolio",
     description:
-      "Computer Engineering student and full-stack developer building modern web systems with clean design and practical engineering.",
+      "Computer Engineering graduate and full-stack developer building modern web systems with clean design and practical engineering.",
   },
   robots: {
     index: true,

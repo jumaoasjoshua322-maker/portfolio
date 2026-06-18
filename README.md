@@ -1,6 +1,6 @@
 # Joshua Jumao-as Portfolio
 
-Joshua Jumao-as Portfolio, a Computer Engineering student and aspiring full-stack software engineer from Cebu, Philippines.
+Joshua Jumao-as Portfolio, a Computer Engineering graduate and full-stack developer from Cebu, Philippines.
 
 ## Stack
 

@@ -9,7 +9,7 @@ import { profile, projects, resumeHighlights, skills } from "@/data/portfolio";
 export const metadata: Metadata = {
   title: "Resume",
   description:
-    "ATS-friendly resume for Joshua Jumao-as, Computer Engineering student and aspiring full-stack software engineer from Cebu, Philippines.",
+    "ATS-friendly resume for Joshua Jumao-as, Computer Engineering graduate and full-stack developer from Cebu, Philippines.",
 };
 
 export default function ResumePage() {

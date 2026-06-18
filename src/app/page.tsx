@@ -7,7 +7,7 @@ export default function Home() {
     "@context": "https://schema.org",
     "@type": "Person",
     name: profile.name,
-    jobTitle: "Aspiring Software Engineer and Full-Stack Developer",
+    jobTitle: "Computer Engineering Graduate and Full-Stack Developer",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Cebu",

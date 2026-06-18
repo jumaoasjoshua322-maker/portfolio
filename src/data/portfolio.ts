@@ -46,11 +46,11 @@ export type Project = {
 
 export const profile = {
   name: "Joshua Jumao-as",
-  role: "Full-Stack Developer · Cebu, Philippines",
+  role: "Computer Engineering Graduate · Full-Stack Developer",
   location: "Mandaue City, Cebu, Philippines",
   headline:
-    "Computer Engineering student in Cebu focused on practical software: dashboards, forms, APIs, database-backed workflows, and responsive interfaces that work on real devices.",
-  availability: "Available after graduation: June 2026",
+    "Computer Engineering graduate in Cebu focused on practical software: dashboards, forms, APIs, database-backed workflows, and responsive interfaces that work on real devices.",
+  availability: "Available for junior and associate roles",
   email: "jumaoas.joshuaa@gmail.com",
   phone: "+63 967-093-7612",
   github: "https://github.com/jumaoasjoshua322-maker",
@@ -73,7 +73,7 @@ export const heroStack = [
  * Two paragraphs, no marketing fluff.
  */
 export const aboutBio = [
-  "I'm a Computer Engineering student in Cebu, finishing in June 2026. I build web applications with React, Node.js, and MongoDB, focusing on authentication, APIs, database-backed workflows, and responsive interfaces.",
+  "I'm a Computer Engineering graduate from the University of Cebu Lapu-Lapu and Mandaue. I build web applications with React, Node.js, and MongoDB, focusing on authentication, APIs, database-backed workflows, and responsive interfaces.",
   "Most of what I know comes from shipping. I use Git daily and treat AI tools as part of the workflow—for research, debugging, and reviewing ideas while building.",
 ];
 
@@ -82,19 +82,19 @@ export const aboutTimeline = [
     year: "Jun 2026",
     title: "BS Computer Engineering",
     description:
-      "Expected graduation from the University of Cebu Lapu-Lapu and Mandaue.",
-  },
-  {
-    year: "2025–2026",
-    title: "ARIAT-Na — Capstone thesis",
-    description:
-      "Smart tourist assistance for Cebu Province: fare estimation, route guidance, itinerary planning. Live.",
+      "Graduated from the University of Cebu Lapu-Lapu and Mandaue.",
   },
   {
     year: "2026",
     title: "Camilo's Catering SaaS",
     description:
       "Multi-tenant catering platform with React, Node, and MongoDB. Shipped and live.",
+  },
+  {
+    year: "2025–2026",
+    title: "ARIAT-Na — Capstone thesis",
+    description:
+      "Smart tourist assistance for Cebu Province: fare estimation, route guidance, itinerary planning. Live.",
   },
   {
     year: "2023–2024",
@@ -285,11 +285,11 @@ export const projects: Project[] = [
 
 export const resumeHighlights = {
   summary:
-    "Computer Engineering student with experience in full-stack development, web-based systems, and software project collaboration. Familiar with front-end development, database integration, AI-assisted workflows, debugging, and responsive interface design.",
+    "Computer Engineering graduate with experience in full-stack development, web-based systems, and software project collaboration. Familiar with front-end development, database integration, AI-assisted workflows, debugging, and responsive interface design.",
   education: [
     "Bachelor of Science in Computer Engineering",
     "University of Cebu Lapu-Lapu and Mandaue",
     "Mandaue City, Cebu, Philippines",
-    "Expected Graduation: June 16, 2026",
+    "Graduated: June 16, 2026",
   ],
 };
